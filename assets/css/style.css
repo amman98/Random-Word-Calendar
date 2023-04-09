@@ -2,6 +2,8 @@
     --buttoncolor: rgb(19, 62, 97);
     --bordercolor: rgb(212, 212, 212);
     --boxshadow: rgb(199, 199, 199);
+    --wordBackgroundColor: rgb(32, 34, 119);
+    --alternateBackground: rgb(243, 243, 253);
 }
 
 * {
@@ -21,12 +23,12 @@ header {
 
 #hamburger {
     border: 1px solid var(--bordercolor);
-    background-color: white;
+    background-color: var(--alternateBackground);
     border-radius: 5px;
     position: absolute;
     left: 0;
     height: 40px;
-    width: 50px;
+    width: 40px;
     margin-left: 20px;
 }
 
@@ -41,6 +43,7 @@ header {
 }
 
 div.calendarbox {
+    background-color: var(--alternateBackground);
     margin-top: 20px;
     width: 210px;
     height: 270px;
@@ -56,7 +59,7 @@ div.calendarbox {
 #randomWord {
     width: 230px;
     margin-left: 10px;
-    background-color: rgb(19, 62, 97);
+    background-color: blue;
     color: white;
     border: 1px solid var(--bordercolor);
     border-radius: 5px;
@@ -65,17 +68,22 @@ div.calendarbox {
     margin-top: 25px;
 }
 
+#randomWord:hover {
+    cursor: pointer;
+    background-color: var(--wordBackgroundColor);
+}
+
 .definitionBox {
     margin-top: 30px;
     width: 210px;
-    height: 30%;
+    height: fit-content;
     margin-left: 10px;
-    background-color: white;
+    background-color: var(--alternateBackground);
     border-right: 1px solid var(--bordercolor);
     border-bottom: 1px solid var(--bordercolor);
     border-radius: 2px;
     box-shadow: 3px 3px 5px var(--boxshadow);
-    padding: 10px;
+    padding: 30px 10px 30px 10px;
 }
 
 i {
@@ -109,12 +117,20 @@ div#weekBox {
     flex-direction: row;
 }
 
+#day1, #day3, #day5, #day7 {
+    background-color: var(--alternateBackground);
+}
+
 #date1, #date2, #date3, #date4, #date5, #date6, #date7 {
     border-right: 1px solid var(--bordercolor);
     width: 10%;
     height: 85%;
     margin-top: .7%;
-}     
+}
+
+#date1, #date3, #date5, #date7 {
+    border-right: 1px solid rgb(150, 150, 150);
+}
 
 #dayWeek1, #dayWeek2, #dayWeek3, #dayWeek4, #dayWeek5, #dayWeek6, #dayWeek7 {
     padding-left: 5px;
@@ -135,7 +151,8 @@ div#weekBox {
 }
 
 #holiday {
-    background-color: rgb(255, 254, 195);
+    background-color: var(--wordBackgroundColor);
+    color: white;
     width: 30%;
     height: 25%;
     margin-left: 70%;
@@ -146,17 +163,19 @@ div#weekBox {
     border-radius: 0px 0px 5px 5px;
     text-align: center;
     font-weight: bold;
+    padding: 3px;
 }
 
 textarea {
     font-weight: bold;
     font-size: 16px;
     width: 95%;
-    height: 45%;
+    height: 100%;
     margin: auto;
-    margin-top: 10px;
     border: none;
     resize: none;
+    background-color: rgba(255, 255, 255, 0);
+    padding-top: 10px;
 }
 
 #userSave {
@@ -166,4 +185,16 @@ textarea {
     margin-right: 10px;
     margin-top: 50px;
     border-radius: 5px;
+    font-size: 10px;
+    background-color: blue;
+    box-shadow: 3px 3px 5px var(--boxshadow);
+    color: white;
 }
+
+#userSave:hover {
+    cursor: pointer;
+    background-color: var(--wordBackgroundColor);
+    color: white;
+}
+
+
