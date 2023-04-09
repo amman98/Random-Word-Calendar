@@ -1,0 +1,169 @@
+:root {
+    --buttoncolor: rgb(19, 62, 97);
+    --bordercolor: rgb(212, 212, 212);
+    --boxshadow: rgb(199, 199, 199);
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+header {
+    margin: 0;
+    border-bottom: 1px solid var(--bordercolor);
+    width: 100%;
+    text-align: center;
+    height: 55px;
+    color: black;
+    padding-top: 15px;
+}
+
+#hamburger {
+    border: 1px solid var(--bordercolor);
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    height: 40px;
+    width: 50px;
+    margin-left: 20px;
+}
+
+#sidebar {
+    position: absolute;
+    height: 80%;
+    padding-right: 20px;
+    margin-left: 10px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.calendarbox {
+    margin-top: 20px;
+    width: 210px;
+    height: 270px;
+    margin-left: 10px;
+    border-right: 1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor);
+    border-radius: 2px;
+    box-shadow: 3px 3px 5px var(--boxshadow);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#randomWord {
+    width: 230px;
+    margin-left: 10px;
+    background-color: rgb(19, 62, 97);
+    color: white;
+    border: 1px solid var(--bordercolor);
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px var(--boxshadow);
+    padding: 10px;
+    margin-top: 25px;
+}
+
+.definitionBox {
+    margin-top: 30px;
+    width: 210px;
+    height: 30%;
+    margin-left: 10px;
+    background-color: white;
+    border-right: 1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor);
+    border-radius: 2px;
+    box-shadow: 3px 3px 5px var(--boxshadow);
+    padding: 10px;
+}
+
+i {
+    font-size: 10px;
+}
+
+#definitionDesc {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+div#weekBox {
+    position: absolute;
+    height: fit-content;
+    width: 79%;
+    margin-left: 280px;
+    border-left: 1px solid var(--bordercolor);
+    padding-bottom: 20px;
+}
+
+#day1, #day2, #day3, #day4, #day5, #day6, #day7 {
+    border: 1px solid var(--bordercolor);
+    box-shadow: 3px 3px 5px var(--boxshadow);
+    width: 90%;
+    height: 100px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 3px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+#date1, #date2, #date3, #date4, #date5, #date6, #date7 {
+    border-right: 1px solid var(--bordercolor);
+    width: 10%;
+    height: 85%;
+    margin-top: .7%;
+}     
+
+#dayWeek1, #dayWeek2, #dayWeek3, #dayWeek4, #dayWeek5, #dayWeek6, #dayWeek7 {
+    padding-left: 5px;
+} 
+
+#daynumber1, #daynumber2, #daynumber3, #daynumber4, #daynumber5, #daynumber6, #daynumber7 {
+    text-align: end;
+    font-size: 40px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+#userStorage {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#holiday {
+    background-color: rgb(255, 254, 195);
+    width: 30%;
+    height: 25%;
+    margin-left: 70%;
+    margin-top: 0;
+    border-right: 1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor);
+    border-left: 1px solid var(--bordercolor);
+    border-radius: 0px 0px 5px 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+textarea {
+    font-weight: bold;
+    font-size: 16px;
+    width: 95%;
+    height: 45%;
+    margin: auto;
+    margin-top: 10px;
+    border: none;
+    resize: none;
+}
+
+#userSave {
+    height: 40px;
+    width: 40px;
+    border: 1px solid var(--bordercolor);
+    margin-right: 10px;
+    margin-top: 50px;
+    border-radius: 5px;
+}
