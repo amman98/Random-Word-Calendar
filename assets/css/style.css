@@ -1,0 +1,80 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+header {
+    margin: 0;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    color: black;
+    padding-top: 10px;
+}
+
+#hamburger {
+    background-color: white;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    height: 40px;
+    width: 50px;
+    margin-left: 20px;
+}
+
+#sidebar {
+    margin-left: 0;
+    width: 250px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div.calendarbox {
+    margin-top: 20px;
+    width: 210px;
+    height: 30%;
+    margin-left: 10px;
+    background-color: white;
+    border-right: 1px solid rgb(199, 199, 199);
+    border-bottom: 1px solid rgb(199, 199, 199);
+    border-radius: 2px;
+    box-shadow: 3px 3px 5px rgb(199, 199, 199);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#randomWord {
+    width: 230px;
+    margin-left: 10px;
+    background-color: white;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgb(199, 199, 199);
+    padding: 10px;
+    margin-top: 25px;
+}
+
+.definitionBox {
+    margin-top: 30px;
+    width: 210px;
+    height: 30%;
+    margin-left: 10px;
+    background-color: white;
+    border-right: 1px solid rgb(199, 199, 199);
+    border-bottom: 1px solid rgb(199, 199, 199);
+    border-radius: 2px;
+    box-shadow: 3px 3px 5px rgb(199, 199, 199);
+    padding: 10px;
+}
+
+i {
+    font-size: 10px;
+}
+
+#definitionDesc {
+    margin-top: 20px;
+    margin-left: 20px;
+}
