@@ -24,6 +24,10 @@
     margin: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 header {
     margin: 0;
     border-bottom: 1px solid var(--bordercolor);
@@ -57,7 +61,7 @@ header {
 }
 
 
-#randomWord {
+#randomWord, .randomWord{
     width: 230px;
     margin-left: 10px;
     background-color: blue;
@@ -70,7 +74,7 @@ header {
     font-weight: bold;
 }
 
-#randomWord:hover {
+#randomWord:hover, .randomWord:hover {
     cursor: pointer;
     background-color: var(--wordBackgroundColor);
 }
@@ -111,7 +115,7 @@ i {
     font-size: 10px;
 }
 
-#definitionDesc {
+#definitionDesc, .definitionDesc {
     margin-top: 20px;
     margin-left: 20px;
 }
@@ -387,6 +391,18 @@ textarea {
         display: none;
     }
 
+    .hidden {
+        display: none;
+    }
+
+    #definitionbox {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
     #topbar {
         height: 10%;
         margin-left: 2%;
@@ -405,13 +421,13 @@ textarea {
         margin-left: 255px;
     }
 
-    #randomWord {
+    .randomWord {
         width: 90%;
         margin: auto;
         margin-top: 40px;
     }
 
-    #definitionBox {
+    .definitionBox {
         width: 80%;
         margin: auto;
         height: 40%;

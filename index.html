@@ -21,27 +21,27 @@
 
     
     <body>
-        <div class="calendar hidden"></div>
+        <div class="calendar"></div>
             <header>
                 <button id="hamburger"></button>
                 <h1>Month/Year</h1>
             </header>
             <div id="sidebar" class="desktop">
                 <button id="randomWord" class="desktop">Generate Random Word</button>
-                <div id="definitionBox" class="definitionBox desktop" >
+                <div id="definitionBox" class="definitionBox desktop hidden">
                     <h2 id="definitionWord">Computer : <i>noun</i></h2>
                     <p id="definitionDesc">A programmable usually electronic device that can store, retrieve, and process data</p>
                 </div><br>
-                <button id="previousWord1" class="desktop">JavaScript</button><br>
-                <button id="previousWord2" class="desktop">Python</button><br>
-                <button id="previousWord3" class="desktop">Index</button>
+                <button id="previousWord1" class="desktop" style="display: none;">JavaScript</button><br>
+                <button id="previousWord2" class="desktop" style="display: none;">Python</button><br>
+                <button id="previousWord3" class="desktop" style="display: none;">Index</button>
             </div>
             <div id="topbar" class="tablet">
                 <div id="wordContainer">
-                <button id="randomWord">Generate Random Word</button>
-                <div id="definitionBox" class="definitionBox">
-                    <h2 id="definitionWord">Computer : <i>noun</i></h2>
-                    <p id="definitionDesc">A programmable usually electronic device that can store, retrieve, and process data</p>
+                <button class="randomWord">Generate Random Word</button>
+                <div class="definitionBox">
+                    <h2 class="definitionWord">Computer : <i>noun</i></h2>
+                    <p class="definitionDesc">A programmable usually electronic device that can store, retrieve, and process data</p>
                 </div>
                 </div>
             </div>
