@@ -14,129 +14,24 @@
         <title>Random Word Calendar</title>
     </head>
 
-        <!--Dekstop View-->
-        <div id="desktop">
-        <main>
+    
+    <body>
+        <div class="calendar hidden"></div>
             <header>
                 <button id="hamburger"></button>
                 <h1>Month/Year</h1>
             </header>
-            <div id="sidebar">
-                <div class="calendar"></div>
-                <button id="randomWord">Generate Random Word</button>
-                <div id="definitionBox" class="definitionBox">
+            <div id="sidebar" class="desktop">
+                <button id="randomWord" class="desktop">Generate Random Word</button>
+                <div id="definitionBox" class="definitionBox desktop" >
                     <h2 id="definitionWord">Computer : <i>noun</i></h2>
                     <p id="definitionDesc">A programmable usually electronic device that can store, retrieve, and process data</p>
-                </div>
-                <button id="previousWord1">JavaScript</button>
-                <button id="previousWord2">Python</button>
-                <button id="previousWord3">Index</button>
+                </div><br>
+                <button id="previousWord1" class="desktop">JavaScript</button><br>
+                <button id="previousWord2" class="desktop">Python</button><br>
+                <button id="previousWord3" class="desktop">Index</button>
             </div>
-            <div id="weekBox">
-                <div id="day1">
-                    <div id="date1">
-                        <p id="dayWeek1">Sun</p>
-                        <p id="daynumber1">8</p>
-                    </div>
-                    <div id="userStorage">
-                            <div id="holiday">Easter Sunday</div>
-                            <textarea id="userEvent">Take the kids to soccer practice</textarea>
-                    </div>
-                    <div>
-                        <button id="userSave"><b>SAVE</b></button>
-                    </div>
-                </div>
-                <div id="day2">
-                    <div id="date2">
-                        <p id="dayWeek2">Mon</p>
-                        <p id="daynumber2">9</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent"></textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-                <div id="day3">
-                    <div id="date3">
-                        <p id="dayWeek3">Tues</p>
-                        <p id="daynumber3">10</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent"></textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-                <div id="day4">
-                    <div id="date4">
-                        <p id="dayWeek4">Wed</p>
-                        <p id="daynumber4">11</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent"></textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-                <div id="day5">
-                    <div id="date5">
-                        <p id="dayWeek5">Thurs</p>
-                        <p id="daynumber5">12</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent">Spots Birthday!</textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-                <div id="day6">
-                    <div id="date6">
-                        <p id="dayWeek6">Fri</p>
-                        <p id="daynumber6">13</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent">Sams Violin Recital</textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-                <div id="day7">
-                    <div id="date7">
-                        <p id="dayWeek7">Sat</p>
-                        <p id="daynumber7">14</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent"></textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-            </div>
-        </main>
-        </div>
-
-        <!--Tablet View-->
-        <div id="tablet">
-        <main>
-            <header>
-                <button id="hamburger"></button>
-                <h1>Month/Year</h1>
-            </header>
-            <div id="topbar">
-                <div class="calendar">Why not working?</div>
+            <div id="topbar" class="tablet">
                 <div id="wordContainer">
                 <button id="randomWord">Generate Random Word</button>
                 <div id="definitionBox" class="definitionBox">
@@ -238,117 +133,6 @@
                 </div>
                 </div>
             </div>
-        </main>
-        </div>
-
-        <!--Mobile View-->
-        <div id="mobile">
-            <header>
-                <button id="hamburger"></button>
-                <h1>Month/Year</h1>
-            </header>
-            <div id="weekBox">
-                <div id="day1">
-                    <div id="date1">
-                        <p id="dayWeek1">Sun</p>
-                        <p id="daynumber1">8</p>
-                    </div>
-                    <div id="userStorage">
-                            <div id="holiday">Easter Sunday</div>
-                            <textarea id="userEvent">Take the kids to soccer practice</textarea>
-                    </div>
-                    <div>
-                        <button id="userSave"><b>SAVE</b></button>
-                    </div>
-                </div>
-                <div id="wordContainer">
-                    <button id="randomWord">Generate Random Word</button>
-                    <div id="definitionBox" class="definitionBox" style="display: none;">
-                        <h2 id="definitionWord">Computer : <i>noun</i></h2>
-                        <p id="definitionDesc">A programmable usually electronic device that can store, retrieve, and process data</p>
-                    </div>
-                    </div>
-                <div id="day2">
-                    <div id="date2">
-                        <p id="dayWeek2">Mon</p>
-                        <p id="daynumber2">9</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent"></textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-                <div id="day3">
-                    <div id="date3">
-                        <p id="dayWeek3">Tues</p>
-                        <p id="daynumber3">10</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent"></textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-                <div id="day4">
-                    <div id="date4">
-                        <p id="dayWeek4">Wed</p>
-                        <p id="daynumber4">11</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent"></textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-                <div id="day5">
-                    <div id="date5">
-                        <p id="dayWeek5">Thurs</p>
-                        <p id="daynumber5">12</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent">Spots Birthday!</textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-                <div id="day6">
-                    <div id="date6">
-                        <p id="dayWeek6">Fri</p>
-                        <p id="daynumber6">13</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent">Sams Violin Recital</textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-                <div id="day7">
-                    <div id="date7">
-                        <p id="dayWeek7">Sat</p>
-                        <p id="daynumber7">14</p>
-                    </div>
-                    <div id="userStorage">
-                        <div id="holiday" style="display: none;"></div>
-                        <textarea id="userEvent"></textarea>
-                </div>
-                <div>
-                    <button id="userSave"><b>SAVE</b></button>
-                </div>
-                </div>
-            </div>
-        </div>
-
 
         <script>dayjs().format()</script>
         <script src="./assets/js/script.js"></script>

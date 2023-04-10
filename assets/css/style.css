@@ -49,25 +49,13 @@ header {
     position: absolute;
     height: 80%;
     padding-right: 20px;
-    margin-left: 10px;
+    margin-left: 20px;
     width: 250px;
     display: flex;
     flex-direction: column;
+    margin-top: 280px;
 }
 
-div.calendarbox {
-    background-color: var(--alternateSidebar);
-    margin-top: 20px;
-    width: 210px;
-    height: 270px;
-    margin-left: 10px;
-    border-right: 1px solid var(--bordercolor);
-    border-bottom: 1px solid var(--bordercolor);
-    border-radius: 2px;
-    box-shadow: 3px 3px 5px var(--boxshadow);
-    padding: 10px;
-    margin-bottom: 10px;
-}
 
 #randomWord {
     width: 230px;
@@ -96,7 +84,7 @@ div.calendarbox {
     border-radius: 5px;
     box-shadow: 3px 3px 5px var(--boxshadow);
     padding: 10px;
-    margin-top: 25px;
+    margin-top: 0px;
     font-weight: bold;
 }
 
@@ -107,7 +95,7 @@ div.calendarbox {
 }
 
 .definitionBox {
-    margin-top: 30px;
+    margin-top: 20px;
     width: 210px;
     height: fit-content;
     margin-left: 10px;
@@ -128,7 +116,7 @@ i {
     margin-left: 20px;
 }
 
-div#weekBox {
+#weekBox {
     position: absolute;
     height: fit-content;
     width: 68vw;
@@ -235,7 +223,7 @@ textarea {
 
 .calendar {
     font-family: 'IBM Plex Sans', sans-serif;
-    position: relative;
+    position: absolute;
     width: 230px;
     height: 270px;
     background: var(--calendar-bg-color);
@@ -245,8 +233,10 @@ textarea {
     font-weight: 600;
     border-radius: var(--calendar-border-radius);
     font-size: 12px;
-    margin-top: 20px;
+    margin-top: 85px;
+    margin-left: 30px;
     box-shadow: 3px 3px 5px var(--boxshadow);
+    z-index: 2;
 }
 
 .calendar-inner {
@@ -377,7 +367,7 @@ textarea {
 /*Desktop properties*/
 @media screen and (min-width: 990px) {
 
-    #tablet {
+    .tablet {
         display: none;
     }
 
@@ -389,15 +379,11 @@ textarea {
 /*Tablet properties*/
 @media screen and (max-width: 989px) and (min-width: 526px) {
 
-    #desktop {
+    .desktop {
         display: none;
     }
 
     #mobile {
-        display: none;
-    }
-
-    .calendar {
         display: none;
     }
 
@@ -408,6 +394,7 @@ textarea {
         display: flex;
         flex-direction: row;
         margin-bottom: 20px;
+        height: 290px
     }
 
     #wordContainer {
@@ -415,7 +402,7 @@ textarea {
         display: flex;
         flex-direction: column;
         width: 80%;
-        margin-left: 2%;
+        margin-left: 255px;
     }
 
     #randomWord {
@@ -431,7 +418,7 @@ textarea {
         padding: 5%;
     }
 
-    div#weekBox {
+    #weekBox {
         height: fit-content;
         width: 90vw;
         margin-left: 0;
@@ -454,11 +441,15 @@ textarea {
 /*Mobile properties*/
 @media screen and (max-width: 525px) {
 
-    #desktop {
+    .desktop {
         display: none;
     }
 
-    #tablet{
+    .tablet{
+        display: none;
+    }
+
+    .hidden {
         display: none;
     }
 
