@@ -38,16 +38,6 @@ header {
     padding-top: 15px;
 }
 
-#hamburger {
-    border: 1px solid var(--bordercolor);
-    background-color: var(--alternateSidebar);
-    border-radius: 5px;
-    position: absolute;
-    left: 0;
-    height: 40px;
-    width: 40px;
-    margin-left: 20px;
-}
 
 #sidebar {
     position: absolute;
@@ -169,7 +159,7 @@ i {
 }
 
 #userStorage {
-    width: 90%;
+    width: 95%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -179,9 +169,8 @@ i {
 #holiday {
     background-color: var(--wordBackgroundColor);
     color: white;
-    width: 30%;
+    width: fit-content;
     height: 25%;
-    margin-left: 70%;
     margin-top: 0;
     border-right: 1px solid var(--bordercolor);
     border-bottom: 1px solid var(--bordercolor);
@@ -189,13 +178,16 @@ i {
     border-radius: 0px 0px 5px 5px;
     text-align: center;
     font-weight: bold;
-    padding: 3px;
+    padding: 5px 15px 10px 15px; 
+    align-self: flex-end;
+    margin-right: 20px;
+    overflow: hidden;
 }
 
 textarea {
     font-weight: bold;
     font-size: 16px;
-    width: 90%;
+    width: 95%;
     height: 100%;
     margin: auto;
     border: none;
@@ -204,12 +196,30 @@ textarea {
     padding-top: 10px;
 }
 
-#userSave {
+.saveClear {
+    width: 10%;
+}
+
+#userClear1, #userClear2, #userClear3, #userClear4, #userClear5, #userClear6, #userClear7 {
     height: 40px;
-    width: 40px;
+    width: 60px;
     border: 1px solid var(--bordercolor);
     margin-right: 10px;
-    margin-top: 50px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    background-color: rgb(168, 38, 38);
+    box-shadow: 3px 3px 5px var(--boxshadow);
+    color: white;
+    padding: 0;
+}
+
+#userSave {
+    height: 40px;
+    width: 60px;
+    border: 1px solid var(--bordercolor);
+    margin-right: 10px;
+    margin-top: 10px;
     border-radius: 5px;
     font-size: 10px;
     background-color: blue;
@@ -217,10 +227,14 @@ textarea {
     color: white;
 }
 
+#userClear1:hover, #userClear2:hover, #userClear3:hover, #userClear4:hover, #userClear5:hover, #userClear6:hover, #userClear7:hover {
+    cursor: pointer;
+    background-color: rgb(104, 22, 22);
+}
+
 #userSave:hover {
     cursor: pointer;
     background-color: var(--wordBackgroundColor);
-    color: white;
 }
 
 /*Calendar incoming*/
@@ -375,7 +389,7 @@ textarea {
         display: none;
     }
 
-    #mobile {
+    .mobile {
         display: none;
     }
 }
@@ -387,7 +401,7 @@ textarea {
         display: none;
     }
 
-    #mobile {
+    .mobile {
         display: none;
     }
 
@@ -473,10 +487,6 @@ textarea {
         display: none;
     }
 
-    #hamburger {
-        z-index: 2;
-    }
-
     .mobilehide {
         position: absolute;
         background-color: #00000069;
@@ -493,12 +503,29 @@ textarea {
         height: fit-content;
     }
 
+
     #hamburger {
+
+
+        font-size: 12px;
+        padding: 0;
+    }
+    #hamburger {
+        border: 1px solid var(--bordercolor);
+        background-color: var(--alternateSidebar);
+        border-radius: 5px;
         position: absolute;
         left: 0;
-        height: 30px;
-        width: 30px;
         margin-left: 5%;
+        z-index: 2;
+        font-size: 12px;
+        padding: 0;
+        height: 40px;
+        width: 40px;
+    }
+
+    #hamburger:hover {
+        cursor: pointer;
     }
 
     h1 {
@@ -512,9 +539,9 @@ textarea {
         width: 200px;
         height: 250px;
         font-size: 10px;
-        margin-left: 5px;
+        margin-left: 10px;
         box-shadow: none;
-        margin-top: 50px;
+        margin-top: 70px;
     }
 
     #wordContainer {
@@ -525,14 +552,14 @@ textarea {
     }
 
 
-    #randomWord {
+    .randomWord {
         width: 90%;
         margin: auto;
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
-    #definitionBox {
+    .definitionBox {
         font-size: 12px;
         width: 80%;
         margin: auto;
@@ -554,7 +581,7 @@ textarea {
     }
 
     #day2 {
-        margin-top: 0;
+        margin-top: 5px;
     }
 
     #day1, #day2, #day3, #day4, #day5, #day6, #day7 {
@@ -574,24 +601,35 @@ textarea {
     }
 
     #holiday {
-        width: 80%;
+        width: fit-content;
         height: 20%;
         margin-left: 20%;
         text-align: center;
         font-weight: bold;
         font-size: 10px;
-        padding: 3px;
+        padding: 3px 5px 5px 5px;
+    }
+
+    .saveClear {
+        width: 20%;
+    }
+
+    #userClear1, #userClear2, #userClear3, #userClear4, #userClear5, #userClear6, #userClear7 {
+        height: 27px;
+        width: 50px;
+        margin-top: 5px;
     }
 
     #userSave {
-        height: 40px;
-        width: 40px;
-        margin-top: 25px;
-        font-size: 8px;
+        height: 27px;
+        width: 50px;
+        margin-top: 5px;
+        padding: 1px;
     }
 
     textarea {
         font-size: 12px;
+        padding: 1px;
     }
 
     

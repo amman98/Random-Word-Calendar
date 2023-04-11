@@ -230,15 +230,23 @@ function CalendarControl() {
 
 var calendarBtnEl = document.querySelector("#hamburger");
 var mobileBlackout = document.querySelector("#mobileBlackout");
-var calendarMobile = document.querySelector("#calendar")
+var calendarMobile = document.querySelector("#calendar");
+var isVisible = true;
 
+//Button Display Functionality for Mobile View
 
 function showCalendar(event){
-    mobileBlackout.classList.add('mobilehide');
-    calendarMobile.classList.remove('hideit');
-}
+    if (isVisible){
+      mobileBlackout.classList.add('mobilehide');
+      calendarMobile.classList.remove('hideit');
+    } else {
+      mobileBlackout.classList.remove('mobilehide');
+      calendarMobile.classList.add('hideit');
+    }
+  isVisible = !isVisible;
+};
 
-
+calendarBtnEl.addEventListener("click", showCalendar);
 
 // Google API
 // Initialize current date var
@@ -368,7 +376,6 @@ function getApiWord(){
 // generate random word on button click
 var generateButtonEl = document.querySelector("#randomWord");
 generateButtonEl.addEventListener("click", getApiWord);
-calendarBtnEl.addEventListener("click", showCalendar);
 
 // The below shows test options for the get current week function
 // getCurrentWeek(dayjs().add(9,"days"));
@@ -388,3 +395,42 @@ getApiHoliday().then(function(res) {
     // Entering the date console logs the holidays associated with the date
     // getCurrentWeek(dayjs('2023-12-25')
 })
+
+//Clear Button Functions
+
+function clearText1(){ 
+  var textBox = document.querySelector("#userEvent1");
+  textBox.value = "";
+}
+function clearText2(){ 
+  var textBox = document.querySelector("#userEvent2");
+  textBox.value = "";
+}
+function clearText3(){ 
+  var textBox = document.querySelector("#userEvent3");
+  textBox.value = "";
+}
+function clearText4(){ 
+  var textBox = document.querySelector("#userEvent4");
+  textBox.value = "";
+}
+function clearText5(){ 
+  var textBox = document.querySelector("#userEvent5");
+  textBox.value = "";
+}
+function clearText6(){ 
+  var textBox = document.querySelector("#userEvent6");
+  textBox.value = "";
+}
+function clearText7(){ 
+  var textBox = document.querySelector("#userEvent7");
+  textBox.value = "";
+}
+
+document.querySelector("#userClear1").addEventListener("click", clearText1);
+document.querySelector("#userClear2").addEventListener("click", clearText2);
+document.querySelector("#userClear3").addEventListener("click", clearText3);
+document.querySelector("#userClear4").addEventListener("click", clearText4);
+document.querySelector("#userClear5").addEventListener("click", clearText5);
+document.querySelector("#userClear6").addEventListener("click", clearText6);
+document.querySelector("#userClear7").addEventListener("click", clearText7);
