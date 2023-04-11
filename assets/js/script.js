@@ -228,6 +228,17 @@ function CalendarControl() {
   
   const calendarControl = new CalendarControl();
 
+var calendarBtnEl = document.querySelector("#hamburger");
+var mobileBlackout = document.querySelector("#mobileBlackout");
+var calendarMobile = document.querySelector("#calendar")
+
+
+function showCalendar(event){
+    mobileBlackout.classList.add('mobilehide');
+    calendarMobile.classList.remove('hideit');
+}
+
+
 
 // Google API
 // Initialize current date var
@@ -357,6 +368,7 @@ function getApiWord(){
 // generate random word on button click
 var generateButtonEl = document.querySelector("#randomWord");
 generateButtonEl.addEventListener("click", getApiWord);
+calendarBtnEl.addEventListener("click", showCalendar);
 
 // The below shows test options for the get current week function
 // getCurrentWeek(dayjs().add(9,"days"));
