@@ -75,6 +75,8 @@ function CalendarControl() {
             monthLabel.innerHTML = calendarControl.calMonthName[calendar.getMonth()];
         },
         selectDate: function (e) {
+            // Added dynamic calendar functionality
+            getCurrentWeek(dayjs(`${calendar.getFullYear()}-${calendar.getMonth() + 1}-${e.currentTarget.textContent}`));
             console.log(
                 `${e.target.textContent} ${
                     calendarControl.calMonthName[calendar.getMonth()]
