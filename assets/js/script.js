@@ -5,10 +5,35 @@ const date = new Date();
 const formattedDate = date.toISOString();
 
 // shows current month and year in header
-function viewCurrentDate() {
+function viewCurrentDate(date) {
     var currentDateEl = document.querySelector("#month-year-date");
-    currentDateEl.textContent = dayjs().format("MMMM, YYYY");
-    console.log(dayjs().format("M/YYYY"));
+    currentDateEl.textContent = date.format("MMMM, YYYY");
+    console.log(date.format("M/YYYY"));
+}
+
+ async function getCurrentWeek(date){
+    // If no param is passed, set the date to the current date
+    if(!date) date = dayjs();
+    // Display the current month & year in header
+    viewCurrentDate(date);
+    // Loops thru IDs for the 7 displayed day-blocks
+    for (let i = 1; i <= 7; i++) {
+        let currentDayWeekEl = document.getElementById("dayWeek" + i);
+        let currentDayNumberWeekEl = document.getElementById("daynumber" + i);
+        // Set the page element based on the current date
+        currentDayWeekEl.textContent = date.format('ddd');
+        currentDayNumberWeekEl.textContent = date.format('D');
+        // Create dateString to use as a key for local storage
+        const dateString = date.format('YYYY-MM-DD');
+        // Load localstorage value for dateString, set to text.content for this day
+        date = date.add(1, 'day');
+
+        // give the object holidays a key(date) to the upcoming holiday
+        const holiday = holidays[dateString];
+        if(holiday) {
+            console.log(holiday);
+        }
+    }
 }
 
 // URL without path
@@ -34,23 +59,19 @@ async function getApiHoliday() {
         return;
     }
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
 
-    const holidays = [];
+    const holidays = {};
 
     // Loop over the data
     for (let i = 0; i < data.items.length; i++) {
-        // Create reference to current item-object
         const item = data.items[i];
-        // push array of objects {holiday: date}
-        holidays.push({
-            holiday: item.summary,
-            date: item.start.date,
-        });
+        holidays[item.start.date] = item.summary;
     }
     console.log(holidays);
+    return holidays;
     // Display an array of objects
-    holidays.forEach(element => console.log(element.holiday + " " + element.date));
+    //holidays.forEach(element => console.log(element.holiday + " " + element.date));
 }
 // Call the func
 // getApiHoliday();
@@ -107,4 +128,21 @@ function getApiWord(){
 var generateButtonEl = document.querySelector("#randomWord");
 generateButtonEl.addEventListener("click", getApiWord);
 
-viewCurrentDate();
+// The below shows test options for the get current week function
+// getCurrentWeek(dayjs().add(9,"days"));
+// getCurrentWeek(dayjs('2000-07-18'))
+
+// Save the holidaysAPI return here
+// It returns an object where the key:date and the value:holiday
+let holidays;
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+// The above docs explain how getApiHoliday works
+// getCurrentWeek only loads after we get the holiday list
+getApiHoliday().then(function(res) {
+    holidays = res
+    getCurrentWeek();
+    // Entering the date console logs the holidays associated with the date
+    // getCurrentWeek(dayjs('2023-12-25')
+})
