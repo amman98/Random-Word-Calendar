@@ -385,9 +385,9 @@ textarea {
 /*Desktop properties*/
 @media screen and (min-width: 990px) {
 
-    .tablet {
+    /* .tablet {
         display: none;
-    }
+    } */
 
     .mobile {
         display: none;
@@ -397,10 +397,6 @@ textarea {
 /*Tablet properties*/
 @media screen and (max-width: 989px) and (min-width: 526px) {
 
-    .desktop {
-        display: none;
-    }
-
     .mobile {
         display: none;
     }
@@ -409,36 +405,25 @@ textarea {
         display: none;
     }
 
-    #definitionbox {
-        display: none;
-    }
-
     body {
         background: white;
     }
 
-    #topbar {
-        height: 10%;
-        margin-left: 2%;
-        width: 95vw;
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 20px;
-        height: 290px
-    }
-
-    #wordContainer {
+    #sidebar {
         font-size: 14px;
         display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 68%;
+        margin-top: 0;
         margin-left: 255px;
+        height: 290px
     }
 
-    .randomWord {
+    #randomWord {
         width: 90%;
         margin: auto;
         margin-top: 40px;
+        margin-bottom: 20px;
     }
 
     .definitionBox {
@@ -451,6 +436,7 @@ textarea {
     #weekBox {
         height: fit-content;
         width: 90vw;
+        margin-top: 300px;
         margin-left: 0;
         border-left: none;
         padding-bottom: 20px;
@@ -463,9 +449,6 @@ textarea {
     #daynumber1, #daynumber2, #daynumber3, #daynumber4, #daynumber5, #daynumber6, #daynumber7 {
         margin-right: 5%;
     }
-
-    
-
 }
 
 /*Mobile properties*/
