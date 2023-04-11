@@ -165,10 +165,10 @@ i {
     flex-direction: column;
 }
 
-/*Manipulate for longer holiday text*/
 .holiday {
     background-color: var(--wordBackgroundColor);
     color: white;
+    font-size: 14px;
     width: fit-content;
     height: 25%;
     margin-top: 0;
@@ -178,7 +178,7 @@ i {
     border-radius: 0px 0px 5px 5px;
     text-align: center;
     font-weight: bold;
-    padding: 5px 15px 10px 15px; 
+    padding: 5px 15px 8px 15px; 
     align-self: flex-end;
     margin-right: 20px;
     overflow: hidden;
@@ -208,7 +208,7 @@ textarea {
     margin-top: 5px;
     border-radius: 5px;
     font-size: 10px;
-    background-color: rgb(168, 38, 38);
+    background-color: rgb(139, 8, 87);
     box-shadow: 3px 3px 5px var(--boxshadow);
     color: white;
     padding: 0;
@@ -229,7 +229,7 @@ textarea {
 
 #userClear1:hover, #userClear2:hover, #userClear3:hover, #userClear4:hover, #userClear5:hover, #userClear6:hover, #userClear7:hover {
     cursor: pointer;
-    background-color: rgb(104, 22, 22);
+    background-color: rgb(99, 6, 62);
 }
 
 .userSave:hover {
@@ -270,7 +270,7 @@ textarea {
 .calendar .calendar-inner .calendar-body div {
     padding: 2px;
     min-height: 2%;
-    line-height: 12px;
+    line-height: 14px;
     border: 1px solid transparent;
     margin: 7px 0px 0px;
 }
@@ -529,12 +529,21 @@ textarea {
     }
 
     .calendar {
-        width: 200px;
-        height: 250px;
-        font-size: 10px;
+        width: 275px;
+        height: 325px;
+        font-size: 16px;
         margin-left: 10px;
         box-shadow: none;
         margin-top: 70px;
+
+    }
+
+    .calendar .calendar-inner .calendar-controls .calendar-year-month .calendar-year-label, .calendar .calendar-inner .calendar-controls .calendar-year-month .calendar-month-label {
+        font-size: 18px;
+    }
+
+    .calendar .calendar-inner .calendar-body div {
+        line-height: 20px;
     }
 
     #wordContainer {
@@ -564,7 +573,7 @@ textarea {
     div#weekBox {
         height: fit-content;
         width: 90vw;
-        margin-left: -3%;
+        margin-left: -4px;
         border-left: none;
         padding-bottom: 20px;
     }
