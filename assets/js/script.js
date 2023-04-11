@@ -75,6 +75,9 @@ function CalendarControl() {
             monthLabel.innerHTML = calendarControl.calMonthName[calendar.getMonth()];
         },
         selectDate: function (e) {
+            getCurrentWeek(dayjs(`${e.target.textContent} ${
+                calendarControl.calMonthName[calendar.getMonth()]
+            } ${calendar.getFullYear()}`));
             console.log(
                 `${e.target.textContent} ${
                     calendarControl.calMonthName[calendar.getMonth()]
@@ -264,6 +267,7 @@ function viewCurrentDate(date) {
 async function getCurrentWeek(date) {
     // If no param is passed, set the date to the current date
     if (!date) date = dayjs();
+    console.log("Date: " + date);
     // Display the current month & year in header
     viewCurrentDate(date);
     // Loops thru IDs for the 7 displayed day-blocks
