@@ -284,11 +284,21 @@ async function getCurrentWeek(date) {
         date = date.add(1, 'day');
 
         const buttonEl = document.getElementById('userSave' + i);
+        // Set date on each button to connect button to the appropriate text area / user input
         buttonEl.setAttribute('data-date', dateString);
 
+        // Get userInput from local storage
         const eventText = localStorage.getItem(dateString);
+        // Display userInput on the page
         const textareaEl = document.getElementById("userEvent" + i);
         textareaEl.value = eventText;
+
+
+
+
+        const buttonClearEl = document.getElementById('userClear' + i);
+        buttonClearEl.setAttribute('data-date', dateString);
+
 
         // give the object holidays a key(date) to the upcoming holiday
         const holiday = holidays[dateString];
@@ -401,17 +411,38 @@ let holidays;
 
 document.querySelectorAll('.userSave').forEach(el => {
     console.log(el);
-    el.addEventListener('click', clickclack);
+    el.addEventListener('click', clickSave);
 })
 
-function clickclack(e) {
+function clickSave(e) {
     e.preventDefault();
     console.log(e.currentTarget);
+    // Get the clicked button ID, equals to userEvent1
     const textareaId = e.currentTarget.getAttribute('data-textarea-id');
+    // Get dateString
     const date = e.currentTarget.getAttribute('data-date');
+    // Access text area thru id 'userEvent1' that we got from button attribute
     const textareaEl = document.getElementById(textareaId);
-    console.log(date, textareaEl.value);
+    //console.log(date, textareaEl.value);
     localStorage.setItem(date, textareaEl.value);
+}
+
+document.querySelectorAll('.userClear').forEach(el => {
+    console.log(el);
+    el.addEventListener('click', clickClear);
+})
+
+function clickClear(e) {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    //const textareaId = e.currentTarget.getAttribute('data-date');
+    // textareaID = userClearEvent1
+    //console.log(textareaId);
+    const date = e.currentTarget.getAttribute('data-date');
+    //const textareaEl = document.getElementById(textareaId);
+    localStorage.removeItem(date);
+    var textBox = document.querySelector("#userEvent1");
+    textBox.value = "";
 }
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
@@ -426,39 +457,39 @@ getApiHoliday().then(function (res) {
 
 //Clear Button Functions
 
-function clearText1(){ 
-  var textBox = document.querySelector("#userEvent1");
-  textBox.value = "";
-}
-function clearText2(){ 
-  var textBox = document.querySelector("#userEvent2");
-  textBox.value = "";
-}
-function clearText3(){ 
-  var textBox = document.querySelector("#userEvent3");
-  textBox.value = "";
-}
-function clearText4(){ 
-  var textBox = document.querySelector("#userEvent4");
-  textBox.value = "";
-}
-function clearText5(){ 
-  var textBox = document.querySelector("#userEvent5");
-  textBox.value = "";
-}
-function clearText6(){ 
-  var textBox = document.querySelector("#userEvent6");
-  textBox.value = "";
-}
-function clearText7(){ 
-  var textBox = document.querySelector("#userEvent7");
-  textBox.value = "";
-}
-
-document.querySelector("#userClear1").addEventListener("click", clearText1);
-document.querySelector("#userClear2").addEventListener("click", clearText2);
-document.querySelector("#userClear3").addEventListener("click", clearText3);
-document.querySelector("#userClear4").addEventListener("click", clearText4);
-document.querySelector("#userClear5").addEventListener("click", clearText5);
-document.querySelector("#userClear6").addEventListener("click", clearText6);
-document.querySelector("#userClear7").addEventListener("click", clearText7);
+// function clearText1(){
+//   var textBox = document.querySelector("#userEvent1");
+//   textBox.value = "";
+// }
+// function clearText2(){
+//   var textBox = document.querySelector("#userEvent2");
+//   textBox.value = "";
+// }
+// function clearText3(){
+//   var textBox = document.querySelector("#userEvent3");
+//   textBox.value = "";
+// }
+// function clearText4(){
+//   var textBox = document.querySelector("#userEvent4");
+//   textBox.value = "";
+// }
+// function clearText5(){
+//   var textBox = document.querySelector("#userEvent5");
+//   textBox.value = "";
+// }
+// function clearText6(){
+//   var textBox = document.querySelector("#userEvent6");
+//   textBox.value = "";
+// }
+// function clearText7(){
+//   var textBox = document.querySelector("#userEvent7");
+//   textBox.value = "";
+// }
+//
+// document.querySelector("#userClear1").addEventListener("click", clearText1);
+// document.querySelector("#userClear2").addEventListener("click", clearText2);
+// document.querySelector("#userClear3").addEventListener("click", clearText3);
+// document.querySelector("#userClear4").addEventListener("click", clearText4);
+// document.querySelector("#userClear5").addEventListener("click", clearText5);
+// document.querySelector("#userClear6").addEventListener("click", clearText6);
+// document.querySelector("#userClear7").addEventListener("click", clearText7);
