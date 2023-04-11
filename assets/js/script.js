@@ -238,10 +238,6 @@ function showCalendar(event){
     calendarMobile.classList.remove('hideit');
 }
 
-function hideCalendar(event){
-    mobileBlackout.classList.remove('mobilehide');
-    calendarMobile.classList.add('hideit');
-}
 
 
 // Google API
