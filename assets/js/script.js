@@ -237,7 +237,7 @@ const formattedDate = date.toISOString();
 
 // shows current month and year in header
 function viewCurrentDate(date) {
-    var currentDateEl = document.querySelector("#month-year-date");
+    var currentDateEl = document.getElementById("month-year-date");
     currentDateEl.textContent = date.format("MMMM, YYYY");
     console.log(date.format("M/YYYY"));
 }
