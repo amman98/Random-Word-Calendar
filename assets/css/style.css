@@ -456,13 +456,33 @@ textarea {
 
 /*Mobile properties*/
 @media screen and (max-width: 525px) {
-
+ 
     .desktop {
         display: none;
     }
 
     .tablet{
         display: none;
+    }
+
+    .hideit {
+        display: none;
+    }
+
+    #sidebar{
+        display: none;
+    }
+
+    #hamburger {
+        z-index: 2;
+    }
+
+    .mobilehide {
+        position: absolute;
+        background-color: #00000069;
+        z-index: 2;
+        height: 101%;
+        width: 100%;
     }
 
     .hidden {
@@ -488,12 +508,22 @@ textarea {
         margin-bottom: 5%;
     }
 
+    .calendar {
+        width: 200px;
+        height: 250px;
+        font-size: 10px;
+        margin-left: 5px;
+        box-shadow: none;
+        margin-top: 50px;
+    }
+
     #wordContainer {
         display: flex;
         flex-direction: column;
         width: 100%;
         margin-left: 6%;
     }
+
 
     #randomWord {
         width: 90%;

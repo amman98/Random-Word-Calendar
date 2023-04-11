@@ -228,6 +228,21 @@ function CalendarControl() {
   
   const calendarControl = new CalendarControl();
 
+var calendarBtnEl = document.querySelector("#hamburger");
+var mobileBlackout = document.querySelector("#mobileBlackout");
+var calendarMobile = document.querySelector("#calendar")
+
+
+function showCalendar(event){
+    mobileBlackout.classList.add('mobilehide');
+    calendarMobile.classList.remove('hideit');
+}
+
+function hideCalendar(event){
+    mobileBlackout.classList.remove('mobilehide');
+    calendarMobile.classList.add('hideit');
+}
+
 
 // Google API
 // Initialize current date var
@@ -336,6 +351,7 @@ function getApiWord(){
 // generate random word on button click
 var generateButtonEl = document.querySelector("#randomWord");
 generateButtonEl.addEventListener("click", getApiWord);
+calendarBtnEl.addEventListener("click", showCalendar);
 
 viewCurrentDate();
 
