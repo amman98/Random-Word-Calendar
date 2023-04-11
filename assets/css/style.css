@@ -24,6 +24,7 @@
     margin: 0;
 }
 
+
 .hidden {
     display: none;
 }
@@ -36,6 +37,10 @@ header {
     height: 55px;
     color: black;
     padding-top: 15px;
+}
+
+#hamburger {
+    display: none;
 }
 
 
@@ -201,40 +206,42 @@ textarea {
 }
 
 #userClear1, #userClear2, #userClear3, #userClear4, #userClear5, #userClear6, #userClear7 {
-    height: 40px;
-    width: 60px;
-    border: 1px solid var(--bordercolor);
+    height: 30px;
+    width: 30px;
     margin-right: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    font-size: 10px;
-    background-color: rgb(139, 8, 87);
-    box-shadow: 3px 3px 5px var(--boxshadow);
-    color: white;
+    background-color: var(--alternateDates);
+    margin-top: 10px;
+    color: black;
     padding: 0;
+    border: none;
+}
+
+
+#userClear2, #userClear4, #userClear6 {
+    background-color: white;
 }
 
 .userSave {
-    height: 40px;
-    width: 60px;
-    border: 1px solid var(--bordercolor);
+    height: 30px;
+    width: 30px;
+    background-color: var(--alternateDates);
+    border: none;
     margin-right: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    font-size: 10px;
-    background-color: blue;
-    box-shadow: 3px 3px 5px var(--boxshadow);
-    color: white;
+    margin-top: 5px;
+    padding: 0;
+    color: black;
+}
+
+#userSave2, #userSave4, #userSave6 {
+    background-color: white;
 }
 
 #userClear1:hover, #userClear2:hover, #userClear3:hover, #userClear4:hover, #userClear5:hover, #userClear6:hover, #userClear7:hover {
     cursor: pointer;
-    background-color: rgb(99, 6, 62);
 }
 
 .userSave:hover {
     cursor: pointer;
-    background-color: var(--wordBackgroundColor);
 }
 
 /*Calendar incoming*/
@@ -474,8 +481,8 @@ textarea {
     }
 
     #hamburger {
+        display: block;
         border: 1px solid var(--bordercolor);
-        background-color: var(--alternateSidebar);
         border-radius: 5px;
         position: absolute;
         left: 0;
@@ -485,6 +492,7 @@ textarea {
         padding: 0;
         height: 40px;
         width: 40px;
+        background-color: white;
     }
 
     #hamburger:hover {
@@ -524,7 +532,6 @@ textarea {
         height: fit-content;
         margin-top: 10px;
         margin-bottom: 0px;
-        z-index: 1;
     }
 
     #randomWord {
@@ -592,15 +599,15 @@ textarea {
     }
 
     #userClear1, #userClear2, #userClear3, #userClear4, #userClear5, #userClear6, #userClear7 {
-        height: 27px;
-        width: 50px;
-        margin-top: 5px;
+        height: 33px;
+        width: 33px;
+        margin-top: 1px;
     }
 
     .userSave {
-        height: 27px;
-        width: 50px;
-        margin-top: 5px;
+        height: 33px;
+        width: 33px;
+        margin-top: 0px;
         padding: 1px;
     }
 
