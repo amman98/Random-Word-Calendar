@@ -129,7 +129,7 @@ i {
     margin-left: 25px;
     display: flex;
     flex-direction: row;
-
+    justify-content: space-between;
 }
 
 #day1, #day3, #day5, #day7 {
@@ -159,13 +159,12 @@ i {
 }
 
 #userStorage {
-    width: 95%;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-/*Manipulate for longer holiday text*/
 #holiday {
     background-color: var(--wordBackgroundColor);
     color: white;
@@ -197,7 +196,7 @@ textarea {
 }
 
 .saveClear {
-    width: 10%;
+    width: 70px;
 }
 
 #userClear1, #userClear2, #userClear3, #userClear4, #userClear5, #userClear6, #userClear7 {
@@ -503,13 +502,6 @@ textarea {
         height: fit-content;
     }
 
-
-    #hamburger {
-
-
-        font-size: 12px;
-        padding: 0;
-    }
     #hamburger {
         border: 1px solid var(--bordercolor);
         background-color: var(--alternateSidebar);
@@ -611,7 +603,7 @@ textarea {
     }
 
     .saveClear {
-        width: 20%;
+        width: 55px;
     }
 
     #userClear1, #userClear2, #userClear3, #userClear4, #userClear5, #userClear6, #userClear7 {
@@ -630,6 +622,7 @@ textarea {
     textarea {
         font-size: 12px;
         padding: 1px;
+        margin-top: 2px;
     }
 
     
