@@ -238,15 +238,15 @@ var isVisible = true;
 
 //Button Display Functionality for Mobile View
 
-function showCalendar(event){
-    if (isVisible){
-      mobileBlackout.classList.add('mobilehide');
-      calendarMobile.classList.remove('hideit');
+function showCalendar(event) {
+    if (isVisible) {
+        mobileBlackout.classList.add('mobilehide');
+        calendarMobile.classList.remove('hideit');
     } else {
-      mobileBlackout.classList.remove('mobilehide');
-      calendarMobile.classList.add('hideit');
+        mobileBlackout.classList.remove('mobilehide');
+        calendarMobile.classList.add('hideit');
     }
-  isVisible = !isVisible;
+    isVisible = !isVisible;
 };
 
 calendarBtnEl.addEventListener("click", showCalendar);
@@ -284,11 +284,17 @@ async function getCurrentWeek(date) {
         date = date.add(1, 'day');
 
         const buttonEl = document.getElementById('userSave' + i);
+        // Set date on each button to connect button to the appropriate text area / user input
         buttonEl.setAttribute('data-date', dateString);
 
+        // Get userInput from local storage
         const eventText = localStorage.getItem(dateString);
+        // Display userInput on the page
         const textareaEl = document.getElementById("userEvent" + i);
         textareaEl.value = eventText;
+
+        const buttonClearEl = document.getElementById('userClear' + i);
+        buttonClearEl.setAttribute('data-date', dateString);
 
         // give the object holidays a key(date) to the upcoming holiday
         const holiday = holidays[dateString];
@@ -337,10 +343,6 @@ async function getApiHoliday() {
     //holidays.forEach(element => console.log(element.holiday + " " + element.date));
 }
 
-// Call the func
-// getApiHoliday();
-
-
 // Random Rare Word API
 let randomWordUrl = "https://wordsapiv1.p.rapidapi.com/words?random=true&frequencyMax=1.74&hasDetails=typeOf";
 
@@ -383,82 +385,51 @@ function getApiWord() {
             console.log(typeEl.textContent);
             displayBoxEl.classList.remove('hidden');
         });
-
-    //console.log(wordDefinition);
 }
 
 // generate random word on button click
 var generateButtonEl = document.querySelector("#randomWord");
 generateButtonEl.addEventListener("click", getApiWord);
 
-// The below shows test options for the get current week function
-// getCurrentWeek(dayjs().add(9,"days"));
-// getCurrentWeek(dayjs('2000-07-18'))
-
-// Save the holidaysAPI return here
-// It returns an object where the key:date and the value:holiday
 let holidays;
 
 document.querySelectorAll('.userSave').forEach(el => {
     console.log(el);
-    el.addEventListener('click', clickclack);
+    el.addEventListener('click', clickSave);
 })
 
-function clickclack(e) {
+function clickSave(e) {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    // Get the clicked button ID, equals to userEvent1
+    const textareaId = e.currentTarget.getAttribute('data-textarea-id');
+    // Get dateString
+    const date = e.currentTarget.getAttribute('data-date');
+    // Access text area thru id 'userEvent1' that we got from button attribute
+    const textareaEl = document.getElementById(textareaId);
+    //console.log(date, textareaEl.value);
+    localStorage.setItem(date, textareaEl.value);
+}
+
+document.querySelectorAll('.userClear').forEach(el => {
+    console.log(el);
+    el.addEventListener('click', clickClear);
+})
+
+function clickClear(e) {
     e.preventDefault();
     console.log(e.currentTarget);
     const textareaId = e.currentTarget.getAttribute('data-textarea-id');
+    // textareaID = userEvent#
     const date = e.currentTarget.getAttribute('data-date');
+    //date = dataString
+    localStorage.removeItem(date);
     const textareaEl = document.getElementById(textareaId);
-    console.log(date, textareaEl.value);
-    localStorage.setItem(date, textareaEl.value);
+    textareaEl.value = "";
 }
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
-// The above docs explain how getApiHoliday works
-// getCurrentWeek only loads after we get the holiday list
 getApiHoliday().then(function (res) {
     holidays = res
     getCurrentWeek();
     // Entering the date console logs the holidays associated with the date
     // getCurrentWeek(dayjs('2023-12-25'))
 })
-
-//Clear Button Functions
-
-function clearText1(){ 
-  var textBox = document.querySelector("#userEvent1");
-  textBox.value = "";
-}
-function clearText2(){ 
-  var textBox = document.querySelector("#userEvent2");
-  textBox.value = "";
-}
-function clearText3(){ 
-  var textBox = document.querySelector("#userEvent3");
-  textBox.value = "";
-}
-function clearText4(){ 
-  var textBox = document.querySelector("#userEvent4");
-  textBox.value = "";
-}
-function clearText5(){ 
-  var textBox = document.querySelector("#userEvent5");
-  textBox.value = "";
-}
-function clearText6(){ 
-  var textBox = document.querySelector("#userEvent6");
-  textBox.value = "";
-}
-function clearText7(){ 
-  var textBox = document.querySelector("#userEvent7");
-  textBox.value = "";
-}
-
-document.querySelector("#userClear1").addEventListener("click", clearText1);
-document.querySelector("#userClear2").addEventListener("click", clearText2);
-document.querySelector("#userClear3").addEventListener("click", clearText3);
-document.querySelector("#userClear4").addEventListener("click", clearText4);
-document.querySelector("#userClear5").addEventListener("click", clearText5);
-document.querySelector("#userClear6").addEventListener("click", clearText6);
-document.querySelector("#userClear7").addEventListener("click", clearText7);
