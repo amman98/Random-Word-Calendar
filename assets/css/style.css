@@ -211,9 +211,13 @@ textarea {
     margin-right: 10px;
     background-color: var(--alternateDates);
     margin-top: 10px;
-    color: black;
+    color: rgb(63, 63, 63);
     padding: 0;
     border: none;
+}
+
+.large {
+    font-size: 32px;
 }
 
 
@@ -227,9 +231,9 @@ textarea {
     background-color: var(--alternateDates);
     border: none;
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
     padding: 0;
-    color: black;
+    color: rgb(63, 63, 63);
 }
 
 #userSave2, #userSave4, #userSave6 {
