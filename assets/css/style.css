@@ -453,20 +453,7 @@ textarea {
 
 /*Mobile properties*/
 @media screen and (max-width: 525px) {
- 
-    .desktop {
-        display: none;
-    }
-
-    .tablet{
-        display: none;
-    }
-
     .hideit {
-        display: none;
-    }
-
-    #sidebar{
         display: none;
     }
 
@@ -529,33 +516,37 @@ textarea {
         line-height: 20px;
     }
 
-    #wordContainer {
+    #sidebar {
+        position: relative;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        margin-left: 6%;
+        width: 90%;
+        height: fit-content;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        z-index: 1;
     }
 
-
-    .randomWord {
-        width: 90%;
+    #randomWord {
+        width: 100%;
         margin: auto;
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
-    .definitionBox {
+    #definitionBox {
+        position: relative;
         font-size: 12px;
-        width: 80%;
+        width: 90%;
         margin: auto;
         height: 30%;
         padding: 5%;
-        margin-bottom: 10px;
     }
 
     div#weekBox {
         height: fit-content;
         width: 90vw;
+        margin-top: -40px;
         margin-left: -4px;
         border-left: none;
         padding-bottom: 20px;
