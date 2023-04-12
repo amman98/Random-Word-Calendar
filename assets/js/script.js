@@ -265,10 +265,18 @@ function viewCurrentDate(date) {
     console.log(date.format("M/YYYY"));
 }
 
+function addWeek() {
+    getCurrentWeek((weekStartDate.add(7, 'days')))
+}
+function removeWeek() {
+    getCurrentWeek((weekStartDate.add(-7, 'days')))
+}
+
+let weekStartDate;
 async function getCurrentWeek(date) {
     // If no param is passed, set the date to the current date
     if (!date) date = dayjs();
-    console.log("Date: " + date);
+    weekStartDate = date;
     // Display the current month & year in header
     viewCurrentDate(date);
     // Loops thru IDs for the 7 displayed day-blocks
@@ -348,14 +356,45 @@ async function getApiHoliday() {
 let randomWordUrl = "https://wordsapiv1.p.rapidapi.com/words?random=true&frequencyMax=1.74&hasDetails=typeOf";
 
 // fetches response from the random word API and displays the random word to the screen
-function getApiWord() {
+const storedWords = [];
+let storedWordsIndex;
+
+function previousWord() {
+    //document.getElementById("testButtonNextWord").disabled = false;
+    storedWordsIndex --;
+    //document.getElementById("testButtonPrevWord").disabled = storedWordsIndex < 1;
+    displayWord(storedWords[storedWordsIndex]);
+}
+function disableWordButtons(){
+    document.getElementById("testButtonPrevWord").disabled = true;
+    document.getElementById("testButtonNextWord").disabled = true;
+}
+
+function nextWord() {
+    //document.getElementById("testButtonPrevWord").disabled = false;
+    storedWordsIndex ++;
+    //document.getElementById("testButtonNextWord").disabled = storedWordsIndex === storedWords.length - 1;
+    displayWord(storedWords[storedWordsIndex]);
+}
+
+function displayWord(wordDefinition) {
     // elements for generating random word
     var displayBoxEl = document.querySelector("#definitionBox");
     var wordEl = document.querySelector("#definitionWord");
     var typeEl = document.createElement("i");
     var descEl = document.querySelector("#definitionDesc");
 
-
+    wordEl.textContent = wordDefinition.word + ": ";
+    typeEl.textContent = wordDefinition.partOfSpeech;
+    wordEl.appendChild(typeEl);
+    descEl.textContent = wordDefinition.definition;
+    console.log(typeEl.textContent);
+    displayBoxEl.classList.remove('hidden');
+}
+function getApiWord() {
+    // if (){
+    //     disableWordButtons();
+    // }
     fetch(randomWordUrl, {
         headers: {
             "X-RapidAPI-Key": "459f025071mshad92206dba64d57p1df22ajsnac8136e5c3da",
@@ -378,13 +417,10 @@ function getApiWord() {
                 definition: data.results[0]["definition"],
                 partOfSpeech: data.results[0]["partOfSpeech"]
             }
-
-            wordEl.textContent = wordDefinition.word + ": ";
-            typeEl.textContent = wordDefinition.partOfSpeech;
-            wordEl.appendChild(typeEl);
-            descEl.textContent = wordDefinition.definition;
-            console.log(typeEl.textContent);
-            displayBoxEl.classList.remove('hidden');
+            displayWord(wordDefinition);
+            storedWords.push(wordDefinition);
+            storedWordsIndex = storedWords.length - 1;
+            console.log(storedWords);
         });
 }
 
