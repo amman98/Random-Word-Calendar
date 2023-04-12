@@ -407,8 +407,11 @@ function clickSave(e) {
     const date = e.currentTarget.getAttribute('data-date');
     // Access text area thru id 'userEvent1' that we got from button attribute
     const textareaEl = document.getElementById(textareaId);
-    //console.log(date, textareaEl.value);
-    localStorage.setItem(date, textareaEl.value);
+
+    // resource for replace function params obtained here: https://futurestud.io/tutorials/remove-all-whitespace-from-a-string-in-javascript
+    if(textareaEl.value.replace(/\s+/g, '') !== "") {
+        localStorage.setItem(date, textareaEl.value);
+    }
 }
 
 document.querySelectorAll('.userClear').forEach(el => {
