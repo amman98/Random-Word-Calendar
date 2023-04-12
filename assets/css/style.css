@@ -16,7 +16,16 @@
     --calendar-nextprev-bg-color: transparent;
     --next-prev-arrow-color : #000000;
     --calendar-border-radius: 3px;
-    --calendar-prevnext-date-color: #484848
+    --calendar-prevnext-date-color: #484848;
+
+    /*Dark Mode Main Page Colors*/
+    --darkBackground: rgb(35, 35, 39);
+    --darkWordColor: rgb(230, 230, 230);
+    --darkBordercolor: rgb(139, 139, 139);
+    --darkBoxshadow: rgb(19, 19, 19);
+    --darkAlternateSidebar: rgb(67, 67, 71);
+    --darkDates: rgb(67, 67, 71);
+    --darkAlternateDates: rgb(48, 48, 53);
 }
 
 * {
@@ -24,6 +33,9 @@
     margin: 0;
 }
 
+.darkMode {
+    background-color: var(--darkBackground);
+}
 
 .hidden {
     display: none;
@@ -33,11 +45,22 @@ header {
     margin: 0;
     border-bottom: 1px solid var(--bordercolor);
     width: 100%;
-    text-align: center;
+    text-align: end;
     height: 55px;
     color: black;
     padding-top: 15px;
 }
+
+h1 {
+    text-align: center;
+}
+
+.header {
+    border-bottom: 1px solid var(--darkBordercolor);
+    color: var(--darkWordColor);
+    background-color: var(--darkBackground);
+}
+
 
 #hamburger {
     display: none;
@@ -56,7 +79,7 @@ header {
 }
 
 
-#randomWord, .randomWord{
+.randomWord {
     width: 230px;
     margin-left: 10px;
     background-color: blue;
@@ -69,9 +92,20 @@ header {
     font-weight: bold;
 }
 
-#randomWord:hover, .randomWord:hover {
+.randomWordDark {
+    background-color: rgb(67, 67, 71);
+    box-shadow: 3px 3px 5px var(--darkBoxshadow);
+    border: none;
+}
+
+.randomWord:hover {
     cursor: pointer;
     background-color: var(--wordBackgroundColor);
+}
+
+.randomWordDark:hover {
+	cursor: pointer;
+    background-color: rgb(87, 87, 87);
 }
 
 #previousWord1, #previousWord2, #previousWord3 {
@@ -106,6 +140,19 @@ header {
     padding: 30px 10px 30px 10px;
 }
 
+.definitionBoxDark {
+    margin-top: 20px;
+    width: 210px;
+    height: fit-content;
+    margin-left: 10px;
+    border-radius: 2px;
+    padding: 30px 10px 30px 10px;
+    background-color: var(--darkAlternateSidebar);
+    box-shadow: 3px 3px 5px var(--darkBoxshadow);
+    color: white;
+    border:none;
+}
+
 i {
     font-size: 10px;
 }
@@ -115,7 +162,7 @@ i {
     margin-left: 20px;
 }
 
-#weekBox {
+.weekBox {
     position: absolute;
     height: fit-content;
     width: 68vw;
@@ -124,7 +171,13 @@ i {
     padding-bottom: 20px;
 }
 
-#day1, #day2, #day3, #day4, #day5, #day6, #day7 {
+.weekBoxDark {
+    border-left: 1px solid var(--darkBordercolor);
+    background-color: var(--darkBackground);
+    color: var(--darkWordColor);
+}
+
+.day1, .day3, .day5, .day7, .day2, .day4, .day6 {
     border: 1px solid var(--bordercolor);
     box-shadow: 3px 3px 5px var(--boxshadow);
     width: 66vw;
@@ -137,19 +190,27 @@ i {
     justify-content: space-between;
 }
 
-#day1, #day3, #day5, #day7 {
+.day1, .day3, .day5, .day7 {
     background-color: var(--alternateDates);
 }
 
-#date1, #date2, #date3, #date4, #date5, #date6, #date7 {
-    border-right: 1px solid var(--bordercolor);
+.day2Dark, .day4Dark, .day6Dark {
+	background-color: var(--darkDates);
+    box-shadow: 3px 3px 5px var(--darkBoxshadow);
+    border: none;
+}
+
+.day1Dark, .day3Dark, .day5Dark, .day7Dark {
+    background-color: var(--darkAlternateDates);
+    box-shadow: 3px 3px 5px var(--darkBoxshadow);
+    border: none;
+}
+
+.date1, .date2, .date3, .date4, .date5, .date6, .date7 {
+    border-right: 1px solid rgb(150, 150, 150);
     width: 10%;
     height: 85%;
     margin-top: .7%;
-}
-
-#date1, #date3, #date5, #date7 {
-    border-right: 1px solid rgb(150, 150, 150);
 }
 
 #dayWeek1, #dayWeek2, #dayWeek3, #dayWeek4, #dayWeek5, #dayWeek6, #dayWeek7 {
@@ -189,7 +250,24 @@ i {
     overflow: hidden;
 }
 
-textarea {
+.holidayDark {
+    font-size: 14px;
+    width: fit-content;
+    height: 25%;
+    margin-top: 0;
+    border:none;
+    border-radius: 0px 0px 5px 5px;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 15px 8px 15px; 
+    align-self: flex-end;
+    margin-right: 20px;
+    overflow: hidden;
+    background-color: rgb(105, 105, 105);
+    color: var(--darkWordColor);
+}
+
+.userEvent1, .userEvent2, .userEvent3, .userEvent4, .userEvent5, .userEvent6, .userEvent7 {
     font-weight: bold;
     font-size: 16px;
     width: 95%;
@@ -201,11 +279,15 @@ textarea {
     padding-top: 5px;
 }
 
+.userEventDark {
+    color: var(--darkWordColor);
+}
+
 .saveClear {
     width: 70px;
 }
 
-#userClear1, #userClear2, #userClear3, #userClear4, #userClear5, #userClear6, #userClear7 {
+.userClear1, .userClear2, .userClear3, .userClear4, .userClear5, .userClear6, .userClear7 {
     height: 30px;
     width: 30px;
     margin-right: 10px;
@@ -214,18 +296,27 @@ textarea {
     color: rgb(63, 63, 63);
     padding: 0;
     border: none;
+}
+
+.userClear2, .userClear4, .userClear6 {
+    background-color: white;
+}
+
+.userClearDark1 {
+    color: var(--darkWordColor);
+    background-color: var(--darkAlternateDates);
+}
+
+.userClearDark2 {
+    color: var(--darkWordColor);
+    background-color: var(--darkDates);
 }
 
 .large {
     font-size: 32px;
 }
 
-
-#userClear2, #userClear4, #userClear6 {
-    background-color: white;
-}
-
-.userSave {
+.userSave1, .userSave3, .userSave5, .userSave7, .userSave2, .userSave4, .userSave6 {
     height: 30px;
     width: 30px;
     background-color: var(--alternateDates);
@@ -236,8 +327,18 @@ textarea {
     color: rgb(63, 63, 63);
 }
 
-#userSave2, #userSave4, #userSave6 {
+.userSave2, .userSave4, .userSave6 {
     background-color: white;
+}
+
+.userSaveDark1 {
+    color: var(--darkWordColor);
+    background-color: var(--darkAlternateDates);
+}
+
+.userSaveDark2 {
+    background-color: var(--darkDates);
+    color: var(--darkWordColor);
 }
 
 #userClear1:hover, #userClear2:hover, #userClear3:hover, #userClear4:hover, #userClear5:hover, #userClear6:hover, #userClear7:hover {
@@ -268,17 +369,23 @@ textarea {
     z-index: 2;
 }
 
+.calendarDark {
+    background: var(--darkAlternateSidebar);
+    box-shadow: 3px 3px 5px var(--darkBoxshadow);
+    color: black;
+}
+
 .calendar-inner {
     padding: 3% 3%;
 }
 
-.calendar .calendar-inner .calendar-body {
+.calendar-body {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     text-align: center;
 }
 
-.calendar .calendar-inner .calendar-body div {
+.calendar-body div {
     padding: 2px;
     min-height: 2%;
     line-height: 14px;
@@ -286,79 +393,83 @@ textarea {
     margin: 7px 0px 0px;
 }
 
-.calendar .calendar-inner .calendar-body div:nth-child(-n+7) {
+.calendar-body div:nth-child(-n+7) {
     border: 1px solid transparent;
-    background-color: rgb(204, 204, 243);
 }
 
-.calendar .calendar-inner .calendar-body div:nth-child(-n+7):hover {
+.calendar-body div:nth-child(-n+7):hover {
     border: 1px solid transparent;
-    background-color: rgb(204, 204, 243);
+    background-color: rgb(202, 202, 202);
 }
 
-.calendar .calendar-inner .calendar-body div>a {
+.calendar-body div>a {
     color: var(--calendar-font-color);
     text-decoration: none;
     display: flex;
     justify-content: center;
 }
 
-.calendar .calendar-inner .calendar-body div:hover {
+.calendar-body div:hover {
     border: 1px solid var(--calendar-date-hover-color);
     cursor: default;
 }
 
-.calendar .calendar-inner .calendar-body div.empty-dates:hover {
+.calendar-body div.empty-dates:hover {
     border: 1px solid transparent;
 }
 
-.calendar .calendar-inner .calendar-controls {
+.calendar-controls {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.calendar .calendar-inner .calendar-today-date {
+.calendar-today-date {
     display: grid;
     text-align: center;
     cursor: pointer;
     margin: 2px 0px;
-    background: var(--calendar-current-date-color);
+    background: rgb(202, 202, 202);
     padding: 2px 0px;
     border-radius: 10px;
     width: 95%;
     margin: auto;
 }
 
-.calendar .calendar-inner .calendar-controls .calendar-year-month {
+.calendar-year-month {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 5px;
+    height: fit-content;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
-.calendar .calendar-inner .calendar-controls .calendar-next {
+.calendar-next {
     text-align: right;
 }
 
-.calendar .calendar-inner .calendar-controls .calendar-year-month .calendar-year-label,
-.calendar .calendar-inner .calendar-controls .calendar-year-month .calendar-month-label {
+.calendar-year-label,
+.calendar-month-label {
     font-size: 14px;
 }
 
-.calendar .calendar-inner .calendar-body .calendar-today {
-    background: var(--calendar-today-color);
+.calendar-today{
+    background: rgb(133, 133, 133);
+    border: 1px solid transparent;
     border-radius: 4px;
 }
 
-.calendar .calendar-inner .calendar-body .calendar-today:hover {
+.calendar-today:hover {
     border: 1px solid transparent;
 }
 
-.calendar .calendar-inner .calendar-body .calendar-today a {
+.calendar-today a {
     outline: 2px solid var(--calendar-today-innerborder-color);
 }
 
-.calendar .calendar-inner .calendar-controls .calendar-next a,
-.calendar .calendar-inner .calendar-controls .calendar-prev a {
+.calendar-next a,
+.calendar-prev a {
     color: var(--calendar-font-color);
     font-family: arial, consolas, sans-serif;
     font-size: 12px;
@@ -369,28 +480,33 @@ textarea {
     margin: 10px 0 10px 0;
 }
 
-.calendar .calendar-inner .calendar-controls .calendar-next a svg,
-.calendar .calendar-inner .calendar-controls .calendar-prev a svg {
+.calendar-next a svg,
+.calendar-prev a svg {
     height: 30%;
     width: 30%;
 }
 
-.calendar .calendar-inner .calendar-controls .calendar-next a svg path,
-.calendar .calendar-inner .calendar-controls .calendar-prev a svg path{
+.calendar-next a svg path,
+.calendar-prev a svg path{
     fill: var(--next-prev-arrow-color);
 }
 
-.calendar .calendar-inner .calendar-body .prev-dates,
-.calendar .calendar-inner .calendar-body .next-dates {
-    color: var(--calendar-prevnext-date-color);
+.prev-dates,
+.next-dates {
+    color: rgb(145, 145, 145);
 }
 
-.calendar .calendar-inner .calendar-body .prev-dates:hover,
-.calendar .calendar-inner .calendar-body .next-dates:hover {
+.prev-dates:hover,
+.next-dates:hover {
   border: 1px solid transparent;
   pointer-events: none;
 }
 
+/*Calender Dark Mode Dates*/
+
+.calendarDaysDark {
+    color: var(--darkWordColor) !important;
+}
 
 
 /*Desktop properties*/
@@ -424,10 +540,12 @@ textarea {
         font-size: 14px;
         display: flex;
         flex-direction: column;
-        width: 68%;
+        text-align: end;
+        width: 45vw;
+        margin-left: 50%;
         margin-top: 0;
-        margin-left: 255px;
-        height: 290px
+        height: 320px;
+        align-self: flex-end;
     }
 
     #randomWord {
@@ -440,8 +558,10 @@ textarea {
     .definitionBox {
         width: 80%;
         margin: auto;
-        height: 40%;
+        height: 50%;
         padding: 5%;
+        text-align: left;
+        overflow: hidden;
     }
 
     #weekBox {
@@ -481,7 +601,12 @@ textarea {
     }
 
     header{
-        height: fit-content;
+        height: 70px;
+    }
+
+    h1 {
+        margin-top: 0px;
+        margin-bottom: 10px;
     }
 
     #hamburger {
@@ -608,7 +733,7 @@ textarea {
         margin-top: 1px;
     }
 
-    .userSave {
+    #userSave1, #userSave2, #userSave3, #userSave4, #userSave5, #userSave6, #userSave7 {
         height: 33px;
         width: 33px;
         margin-top: 0px;

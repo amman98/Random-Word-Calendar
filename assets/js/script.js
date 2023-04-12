@@ -1,6 +1,7 @@
 //Calendar JS 
 
 //calendar framework url: "https://codepen.io/alvarotrigo/pen/bGLpROa"
+//Toggle Button Framework url: "https://ionicframework.com/docs/" 
 
 //check the console for date click event
 //Fixed day highlight
@@ -436,3 +437,164 @@ getApiHoliday().then(function (res) {
     // Entering the date console logs the holidays associated with the date
     // getCurrentWeek(dayjs('2023-12-25'))
 })
+
+// Dark Mode Button
+
+var toggleButton = document.querySelector("#toggleButton")
+
+var html = document.querySelector("#html");
+var header = document.querySelector("#header");
+var randomWord = document.querySelector("#randomWord");
+var definitionBox = document.querySelector("#definitionBox");
+var weekBox = document.querySelector("#weekBox");
+var day1 = document.querySelector("#day1");
+var day2 = document.querySelector("#day2");
+var day3 = document.querySelector("#day3");
+var day4 = document.querySelector("#day4");
+var day5 = document.querySelector("#day5");
+var day6 = document.querySelector("#day6");
+var day7 = document.querySelector("#day7");
+var holiday1 = document.querySelector("#holiday1");
+var holiday2 = document.querySelector("#holiday2");
+var holiday3 = document.querySelector("#holiday3");
+var holiday4 = document.querySelector("#holiday4");
+var holiday5 = document.querySelector("#holiday5");
+var holiday6 = document.querySelector("#holiday6");
+var holiday7 = document.querySelector("#holiday7");
+var userEvent1 = document.querySelector("#userEvent1");
+var userEvent2 = document.querySelector("#userEvent2");
+var userEvent3 = document.querySelector("#userEvent3");
+var userEvent4 = document.querySelector("#userEvent4");
+var userEvent5 = document.querySelector("#userEvent5");
+var userEvent6 = document.querySelector("#userEvent6");
+var userEvent7 = document.querySelector("#userEvent7");
+var userClear1 = document.querySelector("#userClear1");
+var userClear2 = document.querySelector("#userClear2");
+var userClear3 = document.querySelector("#userClear3");
+var userClear4 = document.querySelector("#userClear4");
+var userClear5 = document.querySelector("#userClear5");
+var userClear6 = document.querySelector("#userClear6");
+var userClear7 = document.querySelector("#userClear7");
+var userSave1 = document.querySelector("#userSave1");
+var userSave2 = document.querySelector("#userSave2");
+var userSave3 = document.querySelector("#userSave3");
+var userSave4 = document.querySelector("#userSave4");
+var userSave5 = document.querySelector("#userSave5");
+var userSave6 = document.querySelector("#userSave6");
+var userSave7 = document.querySelector("#userSave7");
+var calendarDark = document.querySelector("#calendar");
+
+var calendarDays = document.querySelectorAll(".dateNumber");
+var calendarWeek = document.querySelectorAll(".itsTheDays");
+
+var isDarkActive = true;
+
+function setDarkMode () {
+    console.log(calendarDays);
+    if (isDarkActive) {
+        for ( i = 0; i < calendarDays.length; i++) {
+            calendarDays[i].classList.add("calendarDaysDark");
+        };
+        html.classList.add('darkMode');
+        header.classList.add('header');
+        randomWord.classList.add('randomWordDark');
+        definitionBox.classList.add('definitionBoxDark');
+        weekBox.classList.add('weekBoxDark');
+        day1.classList.add('day1Dark');
+        day2.classList.add('day2Dark');
+        day3.classList.add('day3Dark');
+        day4.classList.add('day4Dark');
+        day5.classList.add('day5Dark');
+        day6.classList.add('day6Dark');
+        day7.classList.add('day7Dark');
+        holiday1.classList.add('holidayDark');
+        holiday2.classList.add('holidayDark');
+        holiday3.classList.add('holidayDark');
+        holiday4.classList.add('holidayDark');
+        holiday5.classList.add('holidayDark');
+        holiday6.classList.add('holidayDark');
+        holiday7.classList.add('holidayDark');
+        userEvent1.classList.add('userEventDark');
+        userEvent2.classList.add('userEventDark');
+        userEvent3.classList.add('userEventDark');
+        userEvent4.classList.add('userEventDark');
+        userEvent5.classList.add('userEventDark');
+        userEvent6.classList.add('userEventDark');
+        userEvent7.classList.add('userEventDark');
+        userClear1.classList.add('userClearDark1');
+        userClear2.classList.add('userClearDark2');
+        userClear3.classList.add('userClearDark1');
+        userClear4.classList.add('userClearDark2');
+        userClear5.classList.add('userClearDark1');
+        userClear6.classList.add('userClearDark2');
+        userClear7.classList.add('userClearDark1');
+        userSave1.classList.add('userSaveDark1');
+        userSave2.classList.add('userSaveDark2');
+        userSave3.classList.add('userSaveDark1');
+        userSave4.classList.add('userSaveDark2');
+        userSave5.classList.add('userSaveDark1');
+        userSave6.classList.add('userSaveDark2');
+        userSave7.classList.add('userSaveDark1');
+        calendarDark.classList.add('calendarDark');
+    } else {
+        for ( i = 0; i < calendarDays.length; i++) {
+            calendarDays[i].classList.remove("calendarDaysDark");
+        }
+        html.classList.remove("darkMode");
+        header.classList.remove('header');
+        randomWord.classList.remove('randomWordDark');
+        definitionBox.classList.remove('definitionBoxDark');
+        weekBox.classList.remove('weekBoxDark');
+        day1.classList.remove('day1Dark');
+        day2.classList.remove('day2Dark');
+        day3.classList.remove('day3Dark');
+        day4.classList.remove('day4Dark');
+        day5.classList.remove('day5Dark');
+        day6.classList.remove('day6Dark');
+        day7.classList.remove('day7Dark');
+        holiday1.classList.remove('holidayDark');
+        holiday2.classList.remove('holidayDark');
+        holiday3.classList.remove('holidayDark');
+        holiday4.classList.remove('holidayDark');
+        holiday5.classList.remove('holidayDark');
+        holiday6.classList.remove('holidayDark');
+        holiday7.classList.remove('holidayDark');
+        userEvent1.classList.remove('userEventDark');
+        userEvent2.classList.remove('userEventDark');
+        userEvent3.classList.remove('userEventDark');
+        userEvent4.classList.remove('userEventDark');
+        userEvent5.classList.remove('userEventDark');
+        userEvent6.classList.remove('userEventDark');
+        userEvent7.classList.remove('userEventDark');
+        userClear1.classList.remove('userClearDark1');
+        userClear2.classList.remove('userClearDark2');
+        userClear3.classList.remove('userClearDark1');
+        userClear4.classList.remove('userClearDark2');
+        userClear5.classList.remove('userClearDark1');
+        userClear6.classList.remove('userClearDark2');
+        userClear7.classList.remove('userClearDark1');
+        userSave1.classList.remove('userSaveDark1');
+        userSave2.classList.remove('userSaveDark2');
+        userSave3.classList.remove('userSaveDark1');
+        userSave4.classList.remove('userSaveDark2');
+        userSave5.classList.remove('userSaveDark1');
+        userSave6.classList.remove('userSaveDark2');
+        userSave7.classList.remove('userSaveDark1');
+        calendarDark.classList.remove('calendarDark');
+    }
+    isDarkActive = !isDarkActive;
+}
+
+toggleButton.addEventListener("click", setDarkMode);
+
+
+// function showCalendar(event) {
+//     if (isVisible) {
+//         mobileBlackout.classList.add('mobilehide');
+//         calendarMobile.classList.remove('hideit');
+//     } else {
+//         mobileBlackout.classList.remove('mobilehide');
+//         calendarMobile.classList.add('hideit');
+//     }
+//     isVisible = !isVisible;
+// };
