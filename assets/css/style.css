@@ -10,13 +10,6 @@
     --alternateSidebar: rgb(245, 245, 250);*/
 
     /*Dark Mode Main Page Colors*/
-    --buttoncolor: rgb(19, 62, 97);
-
-    --boxshadow: rgb(199, 199, 199);
-    --wordBackgroundColor: rgb(32, 34, 119);
-    
-    
-
     --darkBackground: rgb(35, 35, 39);
     --darkWordColor: rgb(230, 230, 230);
     --darkBordercolor: rgb(139, 139, 139);
@@ -36,19 +29,6 @@
     --next-prev-arrow-color : #000000;
     --calendar-border-radius: 3px;
     --calendar-prevnext-date-color: #484848*/
-
-    /*Calendar Dark Mode*/
-    --calendar-bg-color: rgb(245, 245, 250);
-    --calendar-font-color: #000000;
-    --calendar-date-hover-color: #505050;
-    --calendar-current-date-color: rgb(245, 245, 250);
-    --calendar-today-color: rgb(204, 204, 243);
-    --calendar-today-innerborder-color: transparent;
-    --calendar-nextprev-bg-color: transparent;
-    --next-prev-arrow-color : #000000;
-    --calendar-border-radius: 3px;
-    --calendar-prevnext-date-color: #484848
-
 }
 
 * {
