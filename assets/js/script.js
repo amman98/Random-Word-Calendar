@@ -247,10 +247,15 @@ function showCalendar(event) {
         mobileBlackout.classList.remove('mobilehide');
         calendarMobile.classList.add('hideit');
     }
-    isVisible = !isVisible;
-};
+   isVisible = !isVisible;
+}
 
 calendarBtnEl.addEventListener("click", showCalendar);
+mobileBlackout.addEventListener("click", closeCalendar);
+function closeCalendar(event){
+        mobileBlackout.classList.remove('mobilehide');
+        calendarMobile.classList.add('hideit');
+}
 
 // Google API
 // Initialize current date var
@@ -360,20 +365,36 @@ const storedWords = [];
 let storedWordsIndex;
 
 function previousWord() {
-    //document.getElementById("testButtonNextWord").disabled = false;
     storedWordsIndex --;
-    //document.getElementById("testButtonPrevWord").disabled = storedWordsIndex < 1;
+    controlWordButtons();
     displayWord(storedWords[storedWordsIndex]);
 }
-function disableWordButtons(){
-    document.getElementById("testButtonPrevWord").disabled = true;
-    document.getElementById("testButtonNextWord").disabled = true;
+
+function controlWordButtons(){
+    if (storedWords.length > 1) {
+        document.getElementById("prevWordBtn").classList.remove("hidden");
+        document.getElementById("nextWordBtn").classList.remove("hidden");
+    }
+    if (storedWordsIndex > 0) {
+        // enable back button
+        document.getElementById("prevWordBtn").disabled = false;
+    } else {
+        // disable back button
+        document.getElementById("prevWordBtn").disabled = true;
+    }
+
+    if (storedWordsIndex < storedWords.length - 1) {
+        // enable forward button
+        document.getElementById("nextWordBtn").disabled = false;
+    } else {
+        // disable forward button
+        document.getElementById("nextWordBtn").disabled = true;
+    }
 }
 
 function nextWord() {
-    //document.getElementById("testButtonPrevWord").disabled = false;
     storedWordsIndex ++;
-    //document.getElementById("testButtonNextWord").disabled = storedWordsIndex === storedWords.length - 1;
+    controlWordButtons();
     displayWord(storedWords[storedWordsIndex]);
 }
 
@@ -393,9 +414,6 @@ function displayWord(wordDefinition) {
 }
 
 function getApiWord() {
-    // if (){
-    //     disableWordButtons();
-    // }
     fetch(randomWordUrl, {
         headers: {
             "X-RapidAPI-Key": "459f025071mshad92206dba64d57p1df22ajsnac8136e5c3da",
@@ -422,6 +440,7 @@ function getApiWord() {
             storedWords.push(wordDefinition);
             storedWordsIndex = storedWords.length - 1;
             console.log(storedWords);
+            controlWordButtons();
         });
 }
 
@@ -471,8 +490,6 @@ function clickClear(e) {
 getApiHoliday().then(function (res) {
     holidays = res
     getCurrentWeek();
-    // Entering the date console logs the holidays associated with the date
-    // getCurrentWeek(dayjs('2023-12-25'))
 })
 
 // Dark Mode Button
@@ -526,8 +543,14 @@ var calendarWeek = document.querySelectorAll(".itsTheDays");
 
 var isDarkActive = false;
 
+// const isDarkActiveStorage = localStorage.getItem("isDarkActive");
+// if (isDarkActiveStorage && isDarkActiveStorage === "true") {
+//
+// }
+
 if(localStorage.getItem("isDarkActive") !== null) {
     if(localStorage.getItem("isDarkActive") === "true") {
+        toggleButton.setAttribute('checked', true);
         console.log("We are here");
         setDarkMode();
     }
@@ -535,9 +558,9 @@ if(localStorage.getItem("isDarkActive") !== null) {
 
 function setDarkMode () {
     if (!isDarkActive) {
-        for ( i = 0; i < calendarDays.length; i++) {
+        for (let i = 0; i < calendarDays.length; i++) {
             calendarDays[i].classList.add("calendarDaysDark");
-        };
+        }
         html.classList.add('darkMode');
         header.classList.add('header');
         randomWord.classList.add('randomWordDark');
@@ -580,7 +603,7 @@ function setDarkMode () {
         userSave7.classList.add('userSaveDark1');
         calendarDark.classList.add('calendarDark');
     } else {
-        for ( i = 0; i < calendarDays.length; i++) {
+        for (let i = 0; i < calendarDays.length; i++) {
             calendarDays[i].classList.remove("calendarDaysDark");
         }
         html.classList.remove("darkMode");
