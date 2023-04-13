@@ -37,7 +37,9 @@
     background-color: var(--darkBackground);
 }
 
-
+#toggleButton {
+    z-index: 0;
+}
 
 .hidden {
     display: none;
@@ -649,7 +651,7 @@ i {
     }
 
     #hamburger {
-        display: block;
+        display: flex;
         border: 1px solid var(--bordercolor);
         border-radius: 5px;
         position: absolute;
@@ -661,6 +663,8 @@ i {
         height: 40px;
         width: 40px;
         background-color: white;
+        justify-content: center;
+        align-items: center;
     }
 
     #hamburger:hover {
@@ -700,6 +704,7 @@ i {
         height: fit-content;
         margin-top: 10px;
         margin-bottom: 20px;
+        margin-left: 5%;
     }
 
     .wordBtnDiv{
