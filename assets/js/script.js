@@ -364,7 +364,12 @@ function previousWord() {
     controlWordButtons();
     displayWord(storedWords[storedWordsIndex]);
 }
+
 function controlWordButtons(){
+    if (storedWords.length > 1) {
+        document.getElementById("prevWordBtn").classList.remove("hidden");
+        document.getElementById("nextWordBtn").classList.remove("hidden");
+    }
     if (storedWordsIndex > 0) {
         // enable back button
         document.getElementById("prevWordBtn").disabled = false;
