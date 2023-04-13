@@ -24,11 +24,6 @@
 
 
 <body>
-<button onclick="addWeek()">Add WEEK</button>
-<button onclick="removeWeek()">Previous WEEK</button>
-<button id="testButtonPrevWord" onclick="previousWord()">Prev word</button>
-<button id="testButtonNextWord" onclick="nextWord()">Next word</button>
-
 <div id="mobileBlackout"></div>
 <div id="calendar" class="calendar hideit"></div>
 <header id="header">
@@ -41,10 +36,11 @@
     <div id="definitionBox" class="definitionBox desktop hidden">
         <h2 id="definitionWord">Computer : <i>noun</i></h2>
         <p id="definitionDesc">A programmable usually electronic device that can store, retrieve, and process data</p>
-    </div><br>
-    <button id="previousWord1" class="desktop" style="display: none;">JavaScript</button><br>
-    <button id="previousWord2" class="desktop" style="display: none;">Python</button><br>
-    <button id="previousWord3" class="desktop" style="display: none;">Index</button>
+    </div>
+    <div class="wordBtnDiv">
+        <button id="testButtonPrevWord" class="lastWord" onclick="previousWord()"><a><i class="material-icons">chevron_left</i></a></button>
+        <button id="testButtonNextWord" class="nextWord" onclick="nextWord()"><a><i class="material-icons">chevron_right</i></a></button>
+        </div>
 </div>
 <div id="weekBox" class="weekBox">
     <div id="day1" class="day1">
@@ -145,6 +141,8 @@
             <button id="userSave7" class="userSave userSave7" data-textarea-id="userEvent7"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
         </div>
     </div>
+    <button class="lastWeek" onclick="removeWeek()"><a><i class="material-icons">chevron_left</i></a></button>
+    <button class="nextWeek" onclick="addWeek()"><a><i class="material-icons">chevron_right</i></a></button>
 </div>
 <script src="./assets/js/script.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
