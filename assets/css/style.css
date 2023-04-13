@@ -698,11 +698,11 @@ i {
         position: relative;
         display: flex;
         flex-direction: column;
-        width: 90%;
+        width: 93%;
         height: fit-content;
         margin-top: 10px;
         margin-bottom: 20px;
-        margin-left: 5%;
+        margin-left: 3%;
     }
 
     .wordBtnDiv{
