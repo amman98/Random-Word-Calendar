@@ -360,20 +360,31 @@ const storedWords = [];
 let storedWordsIndex;
 
 function previousWord() {
-    //document.getElementById("testButtonNextWord").disabled = false;
     storedWordsIndex --;
-    //document.getElementById("testButtonPrevWord").disabled = storedWordsIndex < 1;
+    controlWordButtons();
     displayWord(storedWords[storedWordsIndex]);
 }
-function disableWordButtons(){
-    document.getElementById("testButtonPrevWord").disabled = true;
-    document.getElementById("testButtonNextWord").disabled = true;
+function controlWordButtons(){
+    if (storedWordsIndex > 0) {
+        // enable back button
+        document.getElementById("prevWordBtn").disabled = false;
+    } else {
+        // disable back button
+        document.getElementById("prevWordBtn").disabled = true;
+    }
+
+    if (storedWordsIndex < storedWords.length - 1) {
+        // enable forward button
+        document.getElementById("nextWordBtn").disabled = false;
+    } else {
+        // disable forward button
+        document.getElementById("nextWordBtn").disabled = true;
+    }
 }
 
 function nextWord() {
-    //document.getElementById("testButtonPrevWord").disabled = false;
     storedWordsIndex ++;
-    //document.getElementById("testButtonNextWord").disabled = storedWordsIndex === storedWords.length - 1;
+    controlWordButtons();
     displayWord(storedWords[storedWordsIndex]);
 }
 
@@ -393,9 +404,6 @@ function displayWord(wordDefinition) {
 }
 
 function getApiWord() {
-    // if (){
-    //     disableWordButtons();
-    // }
     fetch(randomWordUrl, {
         headers: {
             "X-RapidAPI-Key": "459f025071mshad92206dba64d57p1df22ajsnac8136e5c3da",
@@ -422,6 +430,7 @@ function getApiWord() {
             storedWords.push(wordDefinition);
             storedWordsIndex = storedWords.length - 1;
             console.log(storedWords);
+            controlWordButtons();
         });
 }
 
