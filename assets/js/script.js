@@ -391,6 +391,7 @@ function displayWord(wordDefinition) {
     console.log(typeEl.textContent);
     displayBoxEl.classList.remove('hidden');
 }
+
 function getApiWord() {
     // if (){
     //     disableWordButtons();
@@ -523,11 +524,17 @@ var calendarDark = document.querySelector("#calendar");
 var calendarDays = document.querySelectorAll(".dateNumber");
 var calendarWeek = document.querySelectorAll(".itsTheDays");
 
-var isDarkActive = true;
+var isDarkActive = false;
+
+if(localStorage.getItem("isDarkActive") !== null) {
+    if(localStorage.getItem("isDarkActive") === "true") {
+        console.log("We are here");
+        setDarkMode();
+    }
+}
 
 function setDarkMode () {
-    console.log(calendarDays);
-    if (isDarkActive) {
+    if (!isDarkActive) {
         for ( i = 0; i < calendarDays.length; i++) {
             calendarDays[i].classList.add("calendarDaysDark");
         };
@@ -619,18 +626,7 @@ function setDarkMode () {
         calendarDark.classList.remove('calendarDark');
     }
     isDarkActive = !isDarkActive;
+    localStorage.setItem("isDarkActive", isDarkActive);
 }
 
 toggleButton.addEventListener("click", setDarkMode);
-
-
-// function showCalendar(event) {
-//     if (isVisible) {
-//         mobileBlackout.classList.add('mobilehide');
-//         calendarMobile.classList.remove('hideit');
-//     } else {
-//         mobileBlackout.classList.remove('mobilehide');
-//         calendarMobile.classList.add('hideit');
-//     }
-//     isVisible = !isVisible;
-// };
