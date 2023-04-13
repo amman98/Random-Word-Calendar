@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" id="html">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- Link the DayJS library -->
-        <script
-                src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-                integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-                crossorigin="anonymous"
-        ></script>
-        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-        <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-        <title>Random Word Calendar</title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Link the DayJS library -->
+    <script
+            src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+            integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+            crossorigin="anonymous"
+    ></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <title>Random Word Calendar</title>
+</head>
 
 
     <body>
@@ -31,7 +30,7 @@
         <header id="header">
             <button id="hamburger"><a><i class="material-icons">apps</i></a></button>
             <h1 id="month-year-date"></h1>
-            <ion-toggle id="toggleButton" [enableOnOffLabels]="true" style="position: absolute; right: 0; margin-right: 10px; font-weight: bold; margin-top: -10px; font-size: 12px;">Color Mode</ion-toggle>
+            <ion-toggle id="toggleButton" [enableOnOffLabels]="true" style="position: absolute; right: 0; margin-right: 10px; font-weight: bold; margin-top: -10px; font-size: 12px;">Dark Mode</ion-toggle>
         </header>
 
         <!-- represents the generate random word section, along with the buttons to cycle through previously viewed words -->
@@ -42,8 +41,8 @@
                 <p id="definitionDesc">A programmable usually electronic device that can store, retrieve, and process data</p>
             </div>
             <div class="wordBtnDiv">
-                <button id="testButtonPrevWord" class="lastWord" onclick="previousWord()"><a><i class="material-icons">chevron_left</i></a></button>
-                <button id="testButtonNextWord" class="nextWord" onclick="nextWord()"><a><i class="material-icons">chevron_right</i></a></button>
+                <button id="prevWordBtn" class="lastWord hidden" onclick="previousWord()"><a><i class="material-icons">chevron_left</i></a></button>
+                <button id="nextWordBtn" class="nextWord hidden" onclick="nextWord()"><a><i class="material-icons">chevron_right</i></a></button>
                 </div>
         </div>
 
