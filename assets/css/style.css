@@ -394,7 +394,7 @@ i {
 }
 
 .calendarDark {
-    background: var(--darkAlternateSidebar);
+    background: rgb(114, 114, 114);
     box-shadow: 3px 3px 5px var(--darkBoxshadow);
     color: black;
 }
@@ -528,9 +528,7 @@ i {
 
 /*Calender Dark Mode Dates*/
 
-.calendarDaysDark {
-    color: var(--darkWordColor) !important;
-}
+
 
 
 /*Desktop properties*/
