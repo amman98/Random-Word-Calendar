@@ -490,8 +490,6 @@ function clickClear(e) {
 getApiHoliday().then(function (res) {
     holidays = res
     getCurrentWeek();
-    // Entering the date console logs the holidays associated with the date
-    // getCurrentWeek(dayjs('2023-12-25'))
 })
 
 // Dark Mode Button
@@ -545,8 +543,14 @@ var calendarWeek = document.querySelectorAll(".itsTheDays");
 
 var isDarkActive = false;
 
+// const isDarkActiveStorage = localStorage.getItem("isDarkActive");
+// if (isDarkActiveStorage && isDarkActiveStorage === "true") {
+//
+// }
+
 if(localStorage.getItem("isDarkActive") !== null) {
     if(localStorage.getItem("isDarkActive") === "true") {
+        toggleButton.setAttribute('checked', true);
         console.log("We are here");
         setDarkMode();
     }
