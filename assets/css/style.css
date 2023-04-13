@@ -698,7 +698,7 @@ i {
         position: relative;
         display: flex;
         flex-direction: column;
-        width: 93%;
+        width: 90vw;
         height: fit-content;
         margin-top: 10px;
         margin-bottom: 20px;
@@ -716,7 +716,7 @@ i {
 
     #randomWord {
         width: 100%;
-        margin: auto;
+        margin: 0;
         margin-top: 10px;
         margin-bottom: 10px;
     }
