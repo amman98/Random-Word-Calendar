@@ -22,129 +22,151 @@
 </head>
 
 
-<body>
-<div id="mobileBlackout"></div>
-<div id="calendar" class="calendar hideit"></div>
-<header id="header">
-    <button id="hamburger"><a><i class="material-icons">apps</i></a></button>
-    <h1 id="month-year-date"></h1>
-    <ion-toggle id="toggleButton" [enableOnOffLabels]="true" style="position: absolute; right: 0; margin-right: 10px; font-weight: bold; margin-top: -10px; font-size: 12px;">Dark Mode</ion-toggle>
-</header>
-<div id="sidebar" class="desktop">
-    <button id="randomWord" class="desktop randomWord">Generate Random Word</button>
-    <div id="definitionBox" class="definitionBox desktop hidden">
-        <h2 id="definitionWord">Computer : <i>noun</i></h2>
-        <p id="definitionDesc">A programmable usually electronic device that can store, retrieve, and process data</p>
-    </div>
-    <div class="wordBtnDiv">
-        <button id="prevWordBtn" class="lastWord hidden" onclick="previousWord()"><a><i class="material-icons">chevron_left</i></a></button>
-        <button id="nextWordBtn" class="nextWord hidden" onclick="nextWord()"><a><i class="material-icons">chevron_right</i></a></button>
+    <body>
+        <div id="mobileBlackout"></div>
+        <div id="calendar" class="calendar hideit"></div>
+
+        <!-- header contains current month and year, button for calendar overview(exclusive to mobile view), and a toggle for dark mode-->
+        <header id="header">
+            <button id="hamburger"><a><i class="material-icons">apps</i></a></button>
+            <h1 id="month-year-date"></h1>
+            <ion-toggle id="toggleButton" [enableOnOffLabels]="true" style="position: absolute; right: 0; margin-right: 10px; font-weight: bold; margin-top: -10px; font-size: 12px;">Dark Mode</ion-toggle>
+        </header>
+
+        <!-- represents the generate random word section, along with the buttons to cycle through previously viewed words -->
+        <div id="sidebar" class="desktop">
+            <button id="randomWord" class="desktop randomWord">Generate Random Word</button>
+            <div id="definitionBox" class="definitionBox desktop hidden">
+                <h2 id="definitionWord">Computer : <i>noun</i></h2>
+                <p id="definitionDesc">A programmable usually electronic device that can store, retrieve, and process data</p>
+            </div>
+            <div class="wordBtnDiv">
+                <button id="prevWordBtn" class="lastWord hidden" onclick="previousWord()"><a><i class="material-icons">chevron_left</i></a></button>
+                <button id="nextWordBtn" class="nextWord hidden" onclick="nextWord()"><a><i class="material-icons">chevron_right</i></a></button>
+                </div>
         </div>
-</div>
-<div id="weekBox" class="weekBox">
-    <div id="day1" class="day1">
-        <div id="date1" class="date1">
-            <p id="dayWeek1"></p>
-            <p id="daynumber1"></p>
+
+        <!-- represents the 7 days displayed on page -->
+        <div id="weekBox" class="weekBox">
+            <!-- day 1 -->
+            <div id="day1" class="day1">
+                <div id="date1" class="date1">
+                    <p id="dayWeek1"></p>
+                    <p id="daynumber1"></p>
+                </div>
+                <div id="userStorage1" class="userStorage">
+                    <div id="holiday1" class="holiday" hidden></div>
+                    <textarea id="userEvent1" class="userEvent1"></textarea>
+                </div>
+                <div class="saveClear">
+                    <button id="userClear1" class="userClear userClear1" data-textarea-id="userEvent1"><a><i class="material-icons" style="font-size: 32px;">highlight_off</i></a></button>
+                    <button id="userSave1" class="userSave userSave1" data-textarea-id="userEvent1"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
+                </div>
+            </div>
+
+            <!-- day 2 -->
+            <div id="day2" class="day2">
+                <div id="date2" class="date2">
+                    <p id="dayWeek2"></p>
+                    <p id="daynumber2"></p>
+                </div>
+                <div id="userStorage2" class="userStorage">
+                    <div id="holiday2" class="holiday" hidden></div>
+                    <textarea id="userEvent2" class="userEvent2"></textarea>
+                </div>
+                <div class="saveClear">
+                    <button id="userClear2" class="userClear userClear2" data-textarea-id="userEvent2"><a><i class="material-icons" style="font-size: 32px">highlight_off</i></a></button>
+                    <button id="userSave2" class="userSave userSave2" data-textarea-id="userEvent2"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
+                </div>
+            </div>
+
+            <!-- day 3 -->
+            <div id="day3" class="day3">
+                <div id="date3" class="date3">
+                    <p id="dayWeek3"></p>
+                    <p id="daynumber3"></p>
+                </div>
+                <div id="userStorage3" class="userStorage" data-textarea-id="userEvent3">
+                    <div id="holiday3" class="holiday" hidden></div>
+                    <textarea id="userEvent3" class="userEvent3"></textarea>
+                </div>
+                <div class="saveClear">
+                    <button id="userClear3" class="userClear userClear3" data-textarea-id="userEvent3"><a><i class="material-icons userClear" style="font-size: 32px;">highlight_off</i></a></button>
+                    <button id="userSave3" class="userSave userSave3" data-textarea-id="userEvent3"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
+                </div>
+            </div>
+
+            <!-- day 4 -->
+            <div id="day4" class="day4">
+                <div id="date4" class="date4">
+                    <p id="dayWeek4"></p>
+                    <p id="daynumber4"></p>
+                </div>
+                <div id="userStorage4" class="userStorage">
+                    <div id="holiday4" class="holiday" hidden></div>
+                    <textarea id="userEvent4" class="userEvent4"></textarea>
+                </div>
+                <div class="saveClear">
+                    <button id="userClear4" class="userClear userClear4" data-textarea-id="userEvent4"><a><i class="material-icons" style="font-size: 32px;">highlight_off</i></a></button>
+                    <button id="userSave4" class="userSave userSave4" data-textarea-id="userEvent4"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
+                </div>
+            </div>
+
+            <!-- day 5 -->
+            <div id="day5" class="day5">
+                <div id="date5" class="date5">
+                    <p id="dayWeek5"></p>
+                    <p id="daynumber5"></p>
+                </div>
+                <div id="userStorage5" class="userStorage">
+                    <div id="holiday5" class="holiday" hidden></div>
+                    <textarea id="userEvent5" class="userEvent5"></textarea>
+                </div>
+                <div class="saveClear">
+                    <button id="userClear5" class="userClear userClear5" data-textarea-id="userEvent5"><a><i class="material-icons" style="font-size: 32px;">highlight_off</i></a></button>
+                    <button id="userSave5" class="userSave userSave5" data-textarea-id="userEvent5"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
+                </div>
+            </div>
+
+            <!-- day 6 -->
+            <div id="day6" class="day6">
+                <div id="date6" class="date6">
+                    <p id="dayWeek6"></p>
+                    <p id="daynumber6"></p>
+                </div>
+                <div id="userStorage6" class="userStorage">
+                    <div id="holiday6" class="holiday" hidden></div>
+                    <textarea id="userEvent6" class="userEvent6"></textarea>
+                </div>
+                <div class="saveClear">
+                    <button id="userClear6" class="userClear userClear6" data-textarea-id="userEvent6"><a><i class="material-icons" style="font-size: 32px;">highlight_off</i></a></button>
+                    <button id="userSave6" class="userSave userSave6" data-textarea-id="userEvent6"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
+                </div>
+            </div>
+
+            <!-- day 7 -->
+            <div id="day7" class="day7">
+                <div id="date7" class="date7">
+                    <p id="dayWeek7"></p>
+                    <p id="daynumber7"></p>
+                </div>
+                <div id="userStorage7" class="userStorage">
+                    <div id="holiday7" class="holiday" hidden></div>
+                    <textarea id="userEvent7" class="userEvent7"></textarea>
+                </div>
+                <div class="saveClear">
+                    <button id="userClear7" class="userClear userClear7" data-textarea-id="userEvent7"><a><i class="material-icons" style="font-size: 32px;">highlight_off</i></a></button>
+                    <button id="userSave7" class="userSave userSave7" data-textarea-id="userEvent7"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
+                </div>
+            </div>
+
+            <!-- represents buttons for cycling back and forth one week at a time -->
+            <button class="lastWeek" onclick="removeWeek()"><a><i class="material-icons">chevron_left</i></a></button>
+            <button class="nextWeek" onclick="addWeek()"><a><i class="material-icons">chevron_right</i></a></button>
         </div>
-        <div id="userStorage1" class="userStorage">
-            <div id="holiday1" class="holiday" hidden></div>
-            <textarea id="userEvent1" class="userEvent1"></textarea>
-        </div>
-        <div class="saveClear">
-            <button id="userClear1" class="userClear userClear1" data-textarea-id="userEvent1"><a><i class="material-icons" style="font-size: 32px;">highlight_off</i></a></button>
-            <button id="userSave1" class="userSave userSave1" data-textarea-id="userEvent1"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
-        </div>
-    </div>
-    <div id="day2" class="day2">
-        <div id="date2" class="date2">
-            <p id="dayWeek2"></p>
-            <p id="daynumber2"></p>
-        </div>
-        <div id="userStorage2" class="userStorage">
-            <div id="holiday2" class="holiday" hidden></div>
-            <textarea id="userEvent2" class="userEvent2"></textarea>
-        </div>
-        <div class="saveClear">
-            <button id="userClear2" class="userClear userClear2" data-textarea-id="userEvent2"><a><i class="material-icons" style="font-size: 32px">highlight_off</i></a></button>
-            <button id="userSave2" class="userSave userSave2" data-textarea-id="userEvent2"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
-        </div>
-    </div>
-    <div id="day3" class="day3">
-        <div id="date3" class="date3">
-            <p id="dayWeek3"></p>
-            <p id="daynumber3"></p>
-        </div>
-            <div id="userStorage3" class="userStorage" data-textarea-id="userEvent3">
-            <div id="holiday3" class="holiday" hidden></div>
-            <textarea id="userEvent3" class="userEvent3"></textarea>
-        </div>
-        <div class="saveClear">
-            <button id="userClear3" class="userClear userClear3" data-textarea-id="userEvent3"><a><i class="material-icons userClear" style="font-size: 32px;">highlight_off</i></a></button>
-            <button id="userSave3" class="userSave userSave3" data-textarea-id="userEvent3"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
-        </div>
-    </div>
-    <div id="day4" class="day4">
-        <div id="date4" class="date4">
-            <p id="dayWeek4"></p>
-            <p id="daynumber4"></p>
-        </div>
-        <div id="userStorage4" class="userStorage">
-            <div id="holiday4" class="holiday" hidden></div>
-            <textarea id="userEvent4" class="userEvent4"></textarea>
-        </div>
-        <div class="saveClear">
-            <button id="userClear4" class="userClear userClear4" data-textarea-id="userEvent4"><a><i class="material-icons" style="font-size: 32px;">highlight_off</i></a></button>
-            <button id="userSave4" class="userSave userSave4" data-textarea-id="userEvent4"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
-        </div>
-    </div>
-    <div id="day5" class="day5">
-        <div id="date5" class="date5">
-            <p id="dayWeek5"></p>
-            <p id="daynumber5"></p>
-        </div>
-        <div id="userStorage5" class="userStorage">
-            <div id="holiday5" class="holiday" hidden></div>
-            <textarea id="userEvent5" class="userEvent5"></textarea>
-        </div>
-        <div class="saveClear">
-            <button id="userClear5" class="userClear userClear5" data-textarea-id="userEvent5"><a><i class="material-icons" style="font-size: 32px;">highlight_off</i></a></button>
-            <button id="userSave5" class="userSave userSave5" data-textarea-id="userEvent5"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
-        </div>
-    </div>
-    <div id="day6" class="day6">
-        <div id="date6" class="date6">
-            <p id="dayWeek6"></p>
-            <p id="daynumber6"></p>
-        </div>
-        <div id="userStorage6" class="userStorage">
-            <div id="holiday6" class="holiday" hidden></div>
-            <textarea id="userEvent6" class="userEvent6"></textarea>
-        </div>
-        <div class="saveClear">
-            <button id="userClear6" class="userClear userClear6" data-textarea-id="userEvent6"><a><i class="material-icons" style="font-size: 32px;">highlight_off</i></a></button>
-            <button id="userSave6" class="userSave userSave6" data-textarea-id="userEvent6"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
-        </div>
-    </div>
-    <div id="day7" class="day7">
-        <div id="date7" class="date7">
-            <p id="dayWeek7"></p>
-            <p id="daynumber7"></p>
-        </div>
-        <div id="userStorage7" class="userStorage">
-            <div id="holiday7" class="holiday" hidden></div>
-            <textarea id="userEvent7" class="userEvent7"></textarea>
-        </div>
-        <div class="saveClear">
-            <button id="userClear7" class="userClear userClear7" data-textarea-id="userEvent7"><a><i class="material-icons" style="font-size: 32px;">highlight_off</i></a></button>
-            <button id="userSave7" class="userSave userSave7" data-textarea-id="userEvent7"><a><i class="material-icons" style="font-size: 32px;">save</i></a></button>
-        </div>
-    </div>
-    <button class="lastWeek" onclick="removeWeek()"><a><i class="material-icons">chevron_left</i></a></button>
-    <button class="nextWeek" onclick="addWeek()"><a><i class="material-icons">chevron_right</i></a></button>
-</div>
-<script src="./assets/js/script.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
-</body>
+
+        <script src="./assets/js/script.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
+    </body>
 </html>
