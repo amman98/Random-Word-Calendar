@@ -247,10 +247,15 @@ function showCalendar(event) {
         mobileBlackout.classList.remove('mobilehide');
         calendarMobile.classList.add('hideit');
     }
-    isVisible = !isVisible;
-};
+   isVisible = !isVisible;
+}
 
 calendarBtnEl.addEventListener("click", showCalendar);
+mobileBlackout.addEventListener("click", closeCalendar);
+function closeCalendar(event){
+        mobileBlackout.classList.remove('mobilehide');
+        calendarMobile.classList.add('hideit');
+}
 
 // Google API
 // Initialize current date var
@@ -549,9 +554,9 @@ if(localStorage.getItem("isDarkActive") !== null) {
 
 function setDarkMode () {
     if (!isDarkActive) {
-        for ( i = 0; i < calendarDays.length; i++) {
+        for (let i = 0; i < calendarDays.length; i++) {
             calendarDays[i].classList.add("calendarDaysDark");
-        };
+        }
         html.classList.add('darkMode');
         header.classList.add('header');
         randomWord.classList.add('randomWordDark');
@@ -594,7 +599,7 @@ function setDarkMode () {
         userSave7.classList.add('userSaveDark1');
         calendarDark.classList.add('calendarDark');
     } else {
-        for ( i = 0; i < calendarDays.length; i++) {
+        for (let i = 0; i < calendarDays.length; i++) {
             calendarDays[i].classList.remove("calendarDaysDark");
         }
         html.classList.remove("darkMode");
