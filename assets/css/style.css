@@ -394,7 +394,7 @@ i {
 }
 
 .calendarDark {
-    background: rgb(114, 114, 114);
+    background: rgb(94, 91, 100);
     box-shadow: 3px 3px 5px var(--darkBoxshadow);
     color: black;
 }
